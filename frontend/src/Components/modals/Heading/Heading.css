@@ -1,0 +1,11 @@
+.heading__name{
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+
+@media (max-width: 975.98px) { 
+    .heading__name{
+        font-size: 2rem;
+    }
+}

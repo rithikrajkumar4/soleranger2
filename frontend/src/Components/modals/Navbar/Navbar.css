@@ -1,0 +1,41 @@
+.prenav{
+    background-color: #D9D9D9;
+    position: fixed;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.prenavBar{
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.nav__rightSide{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.nav__search{
+    background-color: white;
+}
+
+.nav__search input{
+    color: black;
+    border: none;
+    padding: 3px;
+    outline: none;
+}
+
+.nav__searchIcon{
+    cursor: pointer;
+}
+
+.nav__cart{
+    margin-left: 10px;
+}
+
