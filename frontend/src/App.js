@@ -1,3 +1,4 @@
+import logo from './logo.svg';
 import './App.css';
 import { lazy, Suspense } from 'react';
 import {
@@ -8,6 +9,8 @@ import {
 
 
 const Home = lazy(() =>import('./Components/HomePage/Home'));
+const Login = lazy(() =>import('./Components/Login/Login'));
+
 
 function App() {
   return (
@@ -16,6 +19,7 @@ function App() {
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
               <Route path='/' element={<Home/>}></Route>
+              <Route path='/login' element={<Login/>}></Route>
           </Routes>
         </Suspense>
       </BrowserRouter>
