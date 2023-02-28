@@ -21,7 +21,7 @@ function Login() {
                 <button type='submit' className='login__button'> Login </button>
             </form>
             <div className="login__bottom">Don't have an account ? <a className='login__link' onClick={()=>navigate('/register')}> Create one</a> </div>
-            <div className="login__forgotPass"> <a href=""> Forgot Password </a> </div>
+            <div className="login__forgotPass"> <a href="/"> Forgot Password </a> </div>
         </div>
     </div>
   )
