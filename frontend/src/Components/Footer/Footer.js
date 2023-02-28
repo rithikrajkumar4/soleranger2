@@ -58,7 +58,7 @@ const navigate = useNavigate();
             </div>
             <div className='row'>
                 <div className="col-12 footer__bottom" align='center'>
-                    Copyrights &copy; 2023. <a href='/'>SoleRangers</a>
+                    Copyrights &copy; 2023. <a onClick={() => navigate('/login')}>SoleRangers</a>
                 </div>
             </div>
         </div>
