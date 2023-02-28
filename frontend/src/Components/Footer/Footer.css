@@ -59,3 +59,7 @@
 .footer__bottom{
     padding-top: 20px;
 }
+
+.footer__bottom a {
+    cursor: pointer;
+}
