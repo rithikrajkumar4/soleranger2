@@ -1,10 +1,10 @@
 const express = require('express');
-const { registerUser, loginUser, logout, forgotPassword, resetPassword, getUserDetails, updatePassword, updateProfile, getAllUser, getSingleUser, updateRole, deleteUser } = require('../controllers/userController');
+const { registerUser, loginUser, logout, forgotPassword, resetPassword, getUserDetails, updatePassword, updateProfile, getAllUser, getSingleUser, updateRole, deleteUser, createUser } = require('../controllers/userController');
 const router = express.Router();
 
 const {isAuthenticatedUser,isAdmin} = require("../middleware/auth")
 
-
+router.route('/create').post(createUser) ;
 router.route("/register").post(registerUser);
 router.route("/login").post(loginUser);
 router.route("/password/forgot").post(forgotPassword) // Not working right now

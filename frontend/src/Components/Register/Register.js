@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Register.css'
 import Navbar from '../modals/Navbar/Navbar'
 import {useNavigate} from 'react-router-dom'
+import axios from 'axios' ;
 
 function Register() {
 
@@ -10,6 +11,29 @@ function Register() {
     const [email,setEmail] = useState('');
     const [password,setPassword] =  useState('') ;
 
+    const handleClick = async(e) => {
+        console.log('in') ;
+        e.preventDefault() ;
+        const postData = {
+            name : name ,
+            email : email,
+            password : password
+        }
+
+        const res = await fetch("http://localhost:4000/api/v1/create",{
+            method: 'POST',
+            headers: {
+                'Content-Type':'application/json'
+            },
+            body : JSON.stringify(
+                postData
+            )
+        }).then((res) => {
+                const responsse = res ; 
+                console.log('responsse') ;
+                console.log(responsse) ;
+        }).catch((err) => console.log(err))
+    };
 
   return (
     <div className='RegisterPage'>
@@ -19,11 +43,11 @@ function Register() {
                 Register
             </h1>
             <div className="register__text"> Please enter the details below </div>
-            <form action="" className="register__form">
+            <form className="register__form">
                 <input type="text" value={name} placeholder='Name' className="register__input register__email" onChange = {(e) =>setName(e.target.value)}/>
                 <input type="email" placeholder='Email' className="register__input register__email" value={email} onChange={(e) =>setEmail(e.target.value)} />
                 <input type="password" placeholder='Password' className="register__input register__pass" value={password} onChange={(e) =>setPassword(e.target.value)}/>
-                <button type='submit' className='register__button'> Register </button>
+                <button className='register__button' onClick={handleClick}> Register </button>
             </form>
             <div className="register__bottom">Already have an account ? <a className='register__link' onClick={()=>navigate('/login')}> Login</a> </div>
         </div>
