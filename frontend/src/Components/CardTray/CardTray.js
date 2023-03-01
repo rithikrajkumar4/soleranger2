@@ -27,7 +27,7 @@ function CardTray({product}) {
         ) :( <>
             <div className="row" align='center'>
                 {products.map((product) => (
-                    <div className="col-lg-4 col-md-6 my-4">
+                    <div className="col-lg-4 col-md-6 my-4" key={product._id}>
                         <ViewCard image={product.images.url}  product_name={product.name} brand_name={product.category} price={product.price} sizes={'UK4 UK5 UK6 UK7'} />
                     </div>
                 ))}

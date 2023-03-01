@@ -10,6 +10,7 @@ import {
 const Home = lazy(() =>import('./Components/HomePage/Home'));
 const Login = lazy(() =>import('./Components/Login/Login'));
 const Register = lazy(() =>import('./Components/Register/Register'));
+const Admin = lazy(() => import('./Components/Admin/Admin'))
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path='/' element={<Home/>}></Route>
               <Route path='/login' element={<Login/>}></Route>
               <Route path='/register' element={<Register/>}></Route>
+              <Route path='/admin' element={<Admin/>}></Route>
           </Routes>
         </Suspense>
       </BrowserRouter>
