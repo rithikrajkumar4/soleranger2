@@ -16,13 +16,6 @@ exports.registerUser = catchAsyncErrors( async(req,res,next)=>{
     sendToken(user,201,res);
 })
 
-exports.createUser = async (req,res) =>{
-    console.log(req.body) ;
-    const {name,email,password} = req.body;
-    const user = await User.create({
-        name,email,password
-    })
-}
 
 // Login a User
 exports.loginUser = catchAsyncErrors(async (req,res,next)=>{
