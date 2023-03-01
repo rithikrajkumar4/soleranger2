@@ -7,11 +7,6 @@ import CardTray from '../CardTray/CardTray';
 import Navbar from '../modals/Navbar/Navbar';
 import Footer from '../Footer/Footer';
 
-const product = {
-  name:"Nike Shoe 1",
-  price:"3000",
-  _id:"12234"
-}
 
 function Home() {
   return (
@@ -24,7 +19,7 @@ function Home() {
       {/* carousel */}
         <Carousel/>
       {/* cardsTray */}
-        <CardTray product={product}/>
+        <CardTray/>
         
       {/* midwest Image */}
       {/* youtube/insta */}

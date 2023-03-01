@@ -25,16 +25,29 @@ const productSchema = new mongoose.Schema({
             required:true,
         },
     }],
+    brand:{
+        type:String,
+        required:true,
+    },
     category:{
         type:String,
         required:true,
     },
-    stock:{
-        type:Number,
-        required:[true,"Please Enter Product Stock"],
-        maxLength:[4,"max 9999"],
-        default:1
-    },
+    stock:[{
+        // type:Number,
+        // required:[true,"Please Enter Product Stock"],
+        // maxLength:[4,"max 9999"],
+        // default:1
+        key:{
+            type:String,
+            required:[true,"Enter Size"]
+        },
+        value:{
+            type:Number,
+            maxLength:[4,"max 9999"],
+            default:1
+        }
+    }],
     user:{
         type:mongoose.Schema.ObjectId,
         ref:"User",
