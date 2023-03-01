@@ -9,11 +9,11 @@ const crypto = require('crypto');
 // Register a User
 exports.registerUser = catchAsyncErrors( async(req,res,next)=>{
     const {name,email,password} = req.body;
+    res.set('Access-Control-Allow-Origin', '*');
     const user = await User.create({
         name,email,password
     })
     sendToken(user,201,res);
-
 })
 
 exports.createUser = async (req,res) =>{
