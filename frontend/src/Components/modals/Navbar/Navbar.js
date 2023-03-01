@@ -3,8 +3,12 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import './Navbar.css'
+import {useNavigate} from 'react-router-dom' ;
 
 function Navbar() {
+
+  const navigate = useNavigate() ;
+
   return (
     <div className='container-fluid prenav'>
         <nav className='prenavBar'>
@@ -14,7 +18,7 @@ function Navbar() {
           </div>
           <div className="nav__rightSide">
             <div className="nav__user nav__icons">
-              <AccountCircleOutlinedIcon sx={{ fontSize: 28 }}/>
+              <AccountCircleOutlinedIcon sx={{ fontSize: 28 }} onClick={() => navigate('/login')} className='accountIcon'/>
             </div>
 
             <div className="nav__cart nav__icons">
