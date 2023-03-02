@@ -1,0 +1,30 @@
+[{
+    "name":"Nike Dunk Low Retro",
+    "description":"Created for the hardwood but taken to the streets, the basketball icon returns with classic details and throwback hoops flair. Channelling '80s vibes, its padded, low-cut collar lets you take your game anywhere—in comfort.",
+    "price":8900,
+    "img":"smaple",
+    "brand":"Nike",
+    "Category":"shoe",
+    "stock":[{"key":"uk-10","value":1}]
+    
+},
+{
+    "name":"Air Jordan 1 Mid SE",
+    "description":"Every time the AJ1 gets a remake, you get the classic sneaker in new colours and textures for an exciting, revamped look but with all the familiar comforts you know. Premium materials and accents give modern expression to an all-time favourite.",
+    "price":13000,
+    "img":"smaple",
+    "brand":"Nike",
+    "Category":"shoe",
+    "stock":[{"key":"uk-10","value":1}]
+},
+{
+    "name":"Air Jordan 1 Mid",
+    "description":"Inspired by the original AJ1, this mid-top edition maintains the iconic look you love while choice colours and crisp leather give it a distinct identity.",
+    "price":12000,
+    "img":"smaple",
+    "brand":"Nike",
+    "Category":"shoe",
+    "stock":[{"key":"uk-9.5","value":1}]
+}
+
+]
