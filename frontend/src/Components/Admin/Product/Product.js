@@ -12,9 +12,11 @@ function Product() {
 
 
     const deleteProduct =  async (id) =>{
-        await axios.delete(`http://localhost:4000/api/v1/admin/product/:${id}`)
+        console.log('clicked',id)
+        await axios.delete(`http://localhost:4000/api/v1/admin/product/${id}`, { data: {} ,headers: { "Authorization": "***" }} )
          .then((res) =>{
             console.log('deleted',res) ;
+            window.location.reload(true)
          })
          .catch((err) => {
             console.log('error',err) ;
@@ -67,11 +69,11 @@ function Product() {
                                         <td>{product.brand}</td>
                                         <td>{product.category}</td>
                                         <td>{product.price}</td>
-                                        <td>{product.stock}</td>
+                                        <td>{product.stock[0].key}</td>
                                         <td>{product.user}</td>
                                         <td className='product__tableAction'> 
                                             <EditIcon className='product__editIcon'/>
-                                            <DeleteIcon className='product__deleteIcon'/>
+                                            <DeleteIcon className='product__deleteIcon' onClick={()=>deleteProduct(product._id)}/>
                                         </td>
                                     </tr>
                             ))
