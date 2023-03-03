@@ -1,11 +1,14 @@
 import { createReducer } from "@reduxjs/toolkit";
 
 const intialState = {
-  c: 0,
+  user: null,
 };
 
-export const customReducer = createReducer(intialState, {
-  increment: (state) => {
-    state.c += 1;
+export const loginReducer = createReducer(intialState, {
+  login: (state,action) => {
+    state.user  = action.payload;
   },
+  logout : (state) => {
+    state.user = null ;
+  }
 });

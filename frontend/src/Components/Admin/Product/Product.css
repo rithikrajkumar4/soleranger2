@@ -1,0 +1,22 @@
+.create__product {
+    outline: none;
+    padding: 5px;
+    border: 1px solid green;
+    background-color: white;
+    border-radius: 15px;
+    color: green;
+    font-weight: 600;
+}
+
+.create__product:hover{
+    color: white;
+    background-color: green;
+}
+
+.product__deleteIcon{
+    cursor: pointer;
+}
+
+.product__deleteIcon:hover{
+    color: red;
+}

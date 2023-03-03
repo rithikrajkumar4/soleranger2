@@ -3,10 +3,27 @@ import Dashboard from './Dashboard/Dashboard'
 import Navbar from '../modals/Navbar/Navbar'
 import './Admin.css'
 import Product from './Product/Product'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import Login from '../Login/Login'
 
 function Admin() {
-  return (
-    <div className='admin__page'>
+
+    const {user} = useSelector(state => state.user) ;
+    const navigate = useNavigate() ;
+
+    const navLogin = () => {
+        navigate('/login') ;
+    }
+
+   return (
+        <>
+        {!user ? (
+            <>
+               Please login first
+            </>
+        ) :(
+        <div className='admin__page'>
         <Navbar/>
         <div className="container-lg admin__container">
             {/* <Dashboard/> */}
@@ -29,7 +46,9 @@ function Admin() {
         {/* orders */}
             {/* order details */}
         </div>        
-    </div>
+        </div>
+        )}
+        </>
   )
 }
 

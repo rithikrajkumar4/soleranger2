@@ -3,12 +3,14 @@ import Navbar from '../modals/Navbar/Navbar'
 import {useNavigate} from 'react-router-dom'
 import './Login.css'
 import axios from 'axios' ;
+import {useDispatch} from 'react-redux' ;
 
 function Login() {
     const navigate = useNavigate() ;
     const [email,setEmail] = useState() ;
     const [password,setPass] = useState() ;
-    const [role,setRole] = useState() ;
+
+    const dispatch = useDispatch() ;
 
     const handleSubmit = async (e) => {
         e.preventDefault() ;
@@ -29,8 +31,16 @@ function Login() {
             if(res.status === 400 || !res){
                 alert('wrong id or password') ;
             } else{
+                dispatch({
+                    type:"login",
+                    payload:{
+                        userName : res.data.user.name,
+                        userEmail : res.data.user.email,
+                        userRole : res.data.user.role
+                    }
+                });
                 if(res.data.user.role === 'admin'){
-                    navigate('/admin') ;
+                 navigate('/admin') ;  
                 }
             }
          })
