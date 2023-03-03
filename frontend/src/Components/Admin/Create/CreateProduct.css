@@ -1,3 +1,59 @@
 .createProduct__heading{
-    padding-top: 50px;
+    padding-top: 80px;
+}
+
+.createProduct {
+    background-color : rgb(230,238,241) ;
+    height: 100vh;
+}
+
+.createProduct__form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.createProduct__formInput{
+    margin-bottom: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.createProduct__submitButton{
+    width: 100px;
+    outline: none;
+    padding: 5px;
+    border: 1px solid green;
+    background-color: white;
+    border-radius: 15px;
+    color: green;
+    font-weight: 600;
+}
+
+.createProduct__submitButton:hover{
+    color: white;
+    background-color: green;
+}
+
+.createProduct__input{
+    margin-left: 1em;
+    padding: 5px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    color: rgb(94, 86, 86);
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.createProduct__labelName{
+    font-weight: 500;
+    font-size: 1rem;
+
+}
+
+
+.createProduct__imagee{
+    display: none;
 }

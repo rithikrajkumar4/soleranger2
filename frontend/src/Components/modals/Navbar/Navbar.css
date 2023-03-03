@@ -42,3 +42,7 @@
 .accountIcon{
     cursor: pointer;
 }
+
+.nav__userName{
+    margin-right: 5px;
+}

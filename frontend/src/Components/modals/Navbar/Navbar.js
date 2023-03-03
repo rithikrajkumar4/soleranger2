@@ -4,10 +4,12 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import './Navbar.css'
 import {useNavigate} from 'react-router-dom' ;
+import { useSelector } from 'react-redux';
 
 function Navbar() {
 
   const navigate = useNavigate() ;
+  const {user} = useSelector(state => state.user) ;
 
   return (
     <div className='container-fluid prenav'>
@@ -17,6 +19,10 @@ function Navbar() {
             <SearchIcon className='nav__searchIcon'/>
           </div>
           <div className="nav__rightSide">
+            <div className="nav__userName">
+              Hii !! { !user ? (<> Guest </>) :( <> log in </> ) }
+            </div>
+            
             <div className="nav__user nav__icons">
               <AccountCircleOutlinedIcon sx={{ fontSize: 28 }} onClick={() => navigate('/login')} className='accountIcon'/>
             </div>
