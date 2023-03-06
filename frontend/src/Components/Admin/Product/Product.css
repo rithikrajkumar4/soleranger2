@@ -20,3 +20,7 @@
 .product__deleteIcon:hover{
     color: red;
 }
+
+.product__editIcon:hover{
+    color: green;
+}

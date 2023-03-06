@@ -23,11 +23,6 @@ function CreateProduct() {
           <div className="row">
             <div className="col-12">
               <form className="createProduct__form">
-                <div className="row">
-                  <div className="col-4">
-                    ads
-                  </div>
-                </div>
                 <div className="col-8">
                   <div className="createProduct__formInput">
                     <label htmlFor="productName" className='createProduct__labelName'> Enter Name :  </label>

@@ -6,6 +6,7 @@ import './Home.css' ;
 import CardTray from '../CardTray/CardTray';
 import Navbar from '../modals/Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import Map from '../Map/Map';
 
 
 function Home() {
@@ -24,6 +25,7 @@ function Home() {
       {/* midwest Image */}
       {/* youtube/insta */}
       {/* map location */}
+      <Map/>
       {/* footer */}
       <Footer/>
     </div>
