@@ -2,10 +2,7 @@ import React,{useEffect,useState} from 'react'
 import ViewCard from '../Card/ViewCard'
 import img1 from '../Assets/Carousel/carousel_img1.jpeg'
 import Heading from '../modals/Heading/Heading'
-<<<<<<< HEAD
 import './CardTray.css'
-=======
->>>>>>> 1cb68dd1fc660736e5778201e8680f3a98feb9bf
 
 import axios from 'axios' ;
 
