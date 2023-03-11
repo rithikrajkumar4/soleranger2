@@ -58,7 +58,7 @@ const navigate = useNavigate();
             </div>
             <div className='row'>
                 <div className="col-12 footer__bottom" align='center'>
-                    Copyrights &copy; 2023. <a onClick={() => navigate('/login')}>SoleRangers</a>
+                    Copyrights &copy; 2023. <span onClick={() => navigate('/login')}>SoleRangers</span>
                 </div>
             </div>
         </div>

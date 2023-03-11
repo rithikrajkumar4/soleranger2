@@ -1,0 +1,13 @@
+.instagram__image{
+    width: 550px;
+    aspect-ratio: 1;
+    cursor:pointer;
+}
+
+.home__insta{
+    margin-top: 50px;
+}
+
+.insta__col{
+    margin-top: 20px;
+}

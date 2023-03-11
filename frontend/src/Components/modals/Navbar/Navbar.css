@@ -46,3 +46,8 @@
 .nav__userName{
     margin-right: 5px;
 }
+
+
+.nav__shopCart{
+    cursor: pointer;
+}

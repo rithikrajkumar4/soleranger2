@@ -105,14 +105,3 @@ function Product() {
 }
 
 export default Product
-
-
-{/* <div classNameName="row">
-{
-    products.map((product) => (
-        <div className="col-lg-4 col-6">
-            <ProductCard name={product.name} brand__name='brand'/>
-        </div>
-    ))
-}
-</div> */}

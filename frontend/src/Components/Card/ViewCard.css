@@ -3,6 +3,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 20px;
+}
+
+.view__card:hover{
+    box-shadow:  0 2em 2em rgba(9, 142, 146, 0.1);
+    cursor: pointer;
 }
 
 .card__image{

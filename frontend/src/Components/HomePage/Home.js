@@ -7,6 +7,7 @@ import CardTray from '../CardTray/CardTray';
 import Navbar from '../modals/Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import Map from '../Map/Map';
+import Insta from '../Insta/Insta';
 
 
 function Home() {
@@ -26,6 +27,7 @@ function Home() {
       {/* youtube/insta */}
       {/* map location */}
       <Map/>
+      <Insta/>
       {/* footer */}
       <Footer/>
     </div>

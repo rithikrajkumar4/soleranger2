@@ -1,20 +1,14 @@
 import React from 'react'
-import Dashboard from './Dashboard/Dashboard'
 import Navbar from '../modals/Navbar/Navbar'
 import './Admin.css'
 import Product from './Product/Product'
 import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import Login from '../Login/Login'
 
 function Admin() {
 
     const {user} = useSelector(state => state.user) ;
-    const navigate = useNavigate() ;
 
-    const navLogin = () => {
-        navigate('/login') ;
-    }
+
 
    return (
         <>

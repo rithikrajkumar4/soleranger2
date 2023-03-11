@@ -63,7 +63,7 @@ function Login() {
                 <input type="password" placeholder='Password' className="login__input login__pass" value={password} onChange={(e) => {setPass(e.target.value)}}/>
                 <button  className='login__button' onClick={handleSubmit}> Login </button>
             </form>
-            <div className="login__bottom">Don't have an account ? <a className='login__link' onClick={()=>navigate('/register')}> Create one</a> </div>
+            <div className="login__bottom">Don't have an account ? <span className='login__link' onClick={()=>navigate('/register')}> Create one</span> </div>
             <div className="login__forgotPass"> <a href="/"> Forgot Password </a> </div>
         </div>
     </div>
