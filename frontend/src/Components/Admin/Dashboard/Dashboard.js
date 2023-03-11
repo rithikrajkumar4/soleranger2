@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './Dashboard.css'
 import {useSelector} from 'react-redux' ;
-import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
   const {user} = useSelector(state => state.user) ;
-  const navigate = useNavigate() ;
   return (
     <div>
           <div className="row">

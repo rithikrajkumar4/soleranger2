@@ -2,9 +2,10 @@ import React,{useEffect,useState} from 'react'
 import ViewCard from '../Card/ViewCard'
 import img1 from '../Assets/Carousel/carousel_img1.jpeg'
 import Heading from '../modals/Heading/Heading'
+
 import axios from 'axios' ;
 
-function CardTray({product}) {
+function CardTray() {
   
     const [products,setProducts] =useState([]);
     const [isLoading,setIsLoading] = useState(true) ;
@@ -29,7 +30,7 @@ function CardTray({product}) {
                 <Heading heading__name={"Products"} />
                 {products.map((product) => (
                     <div className="col-lg-4 col-md-6 my-4" key={product._id}>
-                        <ViewCard image={product.images.url}  product_name={product.name} brand_name={product.category} price={product.price} sizes={'UK4 UK5 UK6 UK7'} />
+                        <ViewCard image={img1}  product_name={product.name} brand_name={product.category} price={product.price} />
                     </div>
                 ))}
             </div>
