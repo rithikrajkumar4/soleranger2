@@ -10,7 +10,7 @@ function Footer() {
 const navigate = useNavigate();
 
   return (
-    <div className='footer'>
+    <div className='footer' id='footer'>
         <div className="container-lg">
             <div className="row">
                 <div className="col-md-3 col-12 text-center">
@@ -52,7 +52,7 @@ const navigate = useNavigate();
                     </h3>
                     <ul className="footer__links">
                         <li className="footer__item"><FacebookOutlinedIcon/> </li>
-                        <li className="footer__item"><InstagramIcon/></li>
+                        <li className="footer__item"> <a href="https://www.instagram.com/solerangers/?igshid=YmMyMTA2M2Y=">  <InstagramIcon/> </a> </li>
                     </ul>
                 </div>
             </div>

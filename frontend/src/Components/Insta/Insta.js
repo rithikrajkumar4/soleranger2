@@ -5,7 +5,7 @@ import instaImage from '../Assets/insta.jpg'
 
 function Insta() {
   return (
-    <div className="container-lg home__insta">
+    <div className="container-lg home__insta" id='instagram'>
         <div className="row" align='center'>
             <div className="col-12">
                 <Heading heading__name={"- Instagram -"}/>

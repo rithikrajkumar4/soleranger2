@@ -23,7 +23,7 @@ function CardTray() {
     },[])
   
    return (
-    <div className='cardTray container-lg'>
+    <div className='cardTray container-lg' id='products'>
         { isLoading ?(
             <span> loading.... </span>
         ) :( <>

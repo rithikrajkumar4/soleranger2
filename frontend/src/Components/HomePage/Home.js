@@ -8,6 +8,7 @@ import Navbar from '../modals/Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import Map from '../Map/Map';
 import Insta from '../Insta/Insta';
+import MainNav from '../MainNav/MainNav';
 
 
 function Home() {
@@ -18,6 +19,7 @@ function Home() {
       {/* logo */}
         <Logo/>
       {/* navbar */}
+      <MainNav/>
       {/* carousel */}
         <Carousel/>
       {/* cardsTray */}

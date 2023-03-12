@@ -1,0 +1,16 @@
+.mainnav__list{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    transition: all 0.5s;
+}
+
+.mainNav__listItem:hover{
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.mainnav__list a{
+    text-decoration: none !important;
+    color: black;
+}

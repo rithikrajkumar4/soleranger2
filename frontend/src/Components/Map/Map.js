@@ -4,7 +4,7 @@ import './Map.css'
 
 function Map() {
   return (
-    <div className='home__map'>
+    <div className='home__map' id='location'>
         <div className="container-lg">
             <div className="row" align='center'>
               <Heading heading__name={"Store Location"}/>
