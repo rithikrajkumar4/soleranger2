@@ -1,0 +1,8 @@
+so here we will use createSlice,saga,middleware for the state management 
+basically a slice is a part of store data
+our project have 4 slices
+1.user->{adduser,deleteuser,changeRole,getalldetailofuser,getallordersoftheuser}
+2.products->{getproduct,deleteproduct,getSingleProductdetail}
+3.orders
+4.auth->{loginWithRefreshRetain,registerandredirectwithcookie,userCookiesave,forgotpassword}
+5.cart

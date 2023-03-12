@@ -5,10 +5,10 @@ const intialState = {
 };
 
 export const loginReducer = createReducer(intialState, {
-  login: (state,action) => {
-    state.user  = action.payload;
+  login: (state, action) => {
+    state.user = action.payload;
   },
-  logout : (state) => {
-    state.user = null ;
-  }
+  logout: (state) => {
+    state.user = null;
+  },
 });

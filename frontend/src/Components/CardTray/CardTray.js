@@ -1,44 +1,49 @@
-import React,{useEffect,useState} from 'react'
-import ViewCard from '../Card/ViewCard'
-import img1 from '../Assets/Carousel/carousel_img1.jpeg'
-import Heading from '../modals/Heading/Heading'
-import './CardTray.css'
+import React, { useEffect } from "react";
+import ViewCard from "../Card/ViewCard";
+import img1 from "../Assets/Carousel/carousel_img1.jpeg";
+import Heading from "../modals/Heading/Heading";
+import "./CardTray.css";
+import { useDispatch, useSelector } from "react-redux";
 
-import axios from 'axios' ;
+import { fetchProducts } from "../../redux/slices/productSlice";
 
 function CardTray() {
-  
-    const [products,setProducts] =useState([]);
-    const [isLoading,setIsLoading] = useState(true) ;
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.products.products);
+  const status = useSelector((state) => state.products.status);
+  const error = useSelector((state) => state.products.error);
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
 
-    useEffect(() =>{
-        const fetchData = async () =>{
-            const req = await axios.get('http://localhost:4000/api/v1/products') ;
-            setProducts(req.data.product) ;
-            setIsLoading(false) ;
-            return req ;
-        }
-    
-        fetchData() ;
-    },[])
-  
-   return (
-    <div className='cardTray container-lg' id='products'>
-        { isLoading ?(
-            <span> loading.... </span>
-        ) :( <>
-            <div className="row" align='center'>
-                <Heading heading__name={"Products"} />
-                {products.map((product) => (
-                    <div className="col-lg-4 col-md-6 my-4" key={product._id}>
-                        <ViewCard image={img1}  product_name={product.name} brand_name={product.category} price={product.price} />
-                    </div>
-                ))}
-            </div>
-         </>
-        )}
-    </div>
-  )
+  if (status === "failed") {
+    return <div>Error: {error}</div>;
+  }
+  if (status === "succeeded") {
+    const product_list = products.product;
+    return (
+      <div className="cardTray container-lg" id="products">
+        <>
+          <div className="row" align="center">
+            <Heading heading__name={"Products"} />
+            {product_list.map((product) => (
+              <div className="col-lg-4 col-md-6 my-4" key={product._id}>
+                <ViewCard
+                  image={img1}
+                  product_name={product.name}
+                  brand_name={product.category}
+                  price={product.price}
+                />
+              </div>
+            ))}
+          </div>
+        </>
+      </div>
+    );
+  }
 }
-<ViewCard image={img1}  product_name='Shoe Name' brand_name='Brand' price='14,000' sizes={'UK4 UK5 UK6 UK7'}/>
-export default CardTray
+
+export default CardTray;
