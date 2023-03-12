@@ -46,7 +46,8 @@ function CreateProduct() {
                   </div>
                   <div className="createProduct__formInput">
                     <label htmlFor="productImages" className='createProduct__labelName'> Select Images :  </label>
-                    <input type="file" id='productImages' multiple="multiple" className="createProduct__imagee createProduct__input" />
+                    <input type="file" id='productImages' multiple="multiple" className="" />
+                    {/* <input type="file" id='productImages' multiple="multiple" className="createProduct__imagee createProduct__input" /> */}
                   </div>
                   <button type='submit' className='createProduct__submitButton'> Create </button>
                 </div>
