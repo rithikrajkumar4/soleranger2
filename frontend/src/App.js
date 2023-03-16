@@ -12,6 +12,7 @@ const Login = lazy(() =>import('./Components/Login/Login'));
 const Register = lazy(() =>import('./Components/Register/Register'));
 const Admin = lazy(() => import('./Components/Admin/Admin'))
 const CreateProduct = lazy(() => import('./Components/Admin/Create/CreateProduct'))
+const Product = lazy(() => import('./Components/ProductPurchase/ProductPurchase'))
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path='/register' element={<Register/>}></Route>
               <Route path='/admin' element={<Admin/>}></Route>
               <Route path='/admin/create-product' element={<CreateProduct/>}></Route>
+              <Route path='/product' element={<CreateProduct/>}></Route>
           </Routes>
         </Suspense>
       </BrowserRouter>
