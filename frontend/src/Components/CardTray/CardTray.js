@@ -17,9 +17,9 @@ function CardTray() {
   const error = useSelector((state) => state.products.error);
   useEffect(() => {
     if(error){
-      return alert.error(error)
+      alert.error(error)
     }
-    dispatch(fetchProducts());
+    else dispatch(fetchProducts());
   }, [dispatch, error,alert]);
 
   if (status === "loading") {
