@@ -20,7 +20,7 @@ function CardTray() {
       return alert.error(error)
     }
     dispatch(fetchProducts());
-  }, [dispatch, error]);
+  }, [dispatch, error,alert]);
 
   if (status === "loading") {
     return <Loader/>;
@@ -33,7 +33,7 @@ function CardTray() {
     const product_list = products.product;
     return (
       <div className="cardTray container-lg" id="products">
-        <>
+        <div>
           <div className="row" align="center">
             <Heading heading__name={"Products"} />
             {product_list.map((product) => (
@@ -47,7 +47,7 @@ function CardTray() {
               </div>
             ))}
           </div>
-        </>
+        </div>
       </div>
     );
   }
