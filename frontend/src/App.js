@@ -12,13 +12,13 @@ const Login = lazy(() =>import('./Components/Login/Login'));
 const Register = lazy(() =>import('./Components/Register/Register'));
 const Admin = lazy(() => import('./Components/Admin/Admin'))
 const CreateProduct = lazy(() => import('./Components/Admin/Create/CreateProduct'))
-const Product = lazy(() => import('./Components/ProductPurchase/ProductPurchase'))
+const Loader = lazy(() => import('./Components/Loader/loader'))
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter >
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loader/>}>
           <Routes>
               <Route path='/' element={<Home/>}></Route>
               <Route path='/login' element={<Login/>}></Route>
