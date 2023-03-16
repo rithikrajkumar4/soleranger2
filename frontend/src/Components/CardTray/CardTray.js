@@ -6,16 +6,22 @@ import "./CardTray.css";
 import { useDispatch, useSelector } from "react-redux";
 
 import { fetchProducts } from "../../redux/slices/productSlice";
-import Loader from '../../Components/Loader/loader'
+import Loader from '../../Components/Loader/loader';
+import {useAlert} from 'react-alert';
 
 function CardTray() {
+  const alert = useAlert();
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
   const status = useSelector((state) => state.products.status);
   const error = useSelector((state) => state.products.error);
   useEffect(() => {
+    if(error){
+      return alert.error(error)
+    }
     dispatch(fetchProducts());
-  }, [dispatch]);
+  }, [dispatch, error]);
+
   if (status === "loading") {
     return <Loader/>;
   }
