@@ -6,7 +6,7 @@ import "./CardTray.css";
 import { useDispatch, useSelector } from "react-redux";
 
 import { fetchProducts } from "../../redux/slices/productSlice";
-import Loader from '../../Components/Loader/loader'
+import Loader from '../../Components/Loader/loader';
 
 function CardTray() {
   const dispatch = useDispatch();
@@ -14,8 +14,10 @@ function CardTray() {
   const status = useSelector((state) => state.products.status);
   const error = useSelector((state) => state.products.error);
   useEffect(() => {
+    
     dispatch(fetchProducts());
   }, [dispatch]);
+
   if (status === "loading") {
     return <Loader/>;
   }
@@ -27,7 +29,7 @@ function CardTray() {
     const product_list = products.product;
     return (
       <div className="cardTray container-lg" id="products">
-        <>
+        <div>
           <div className="row" align="center">
             <Heading heading__name={"Products"} />
             {product_list.map((product) => (
@@ -42,7 +44,7 @@ function CardTray() {
               </div>
             ))}
           </div>
-        </>
+        </div>
       </div>
     );
   }

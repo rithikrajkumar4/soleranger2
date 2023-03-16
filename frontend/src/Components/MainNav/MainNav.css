@@ -21,6 +21,9 @@
 .mainnav__list a{
     text-decoration: none !important;
     color: black;
+    text-transform: capitalize;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
 }
 
 
@@ -29,7 +32,6 @@
     color: white;
     background-color: brown;
     cursor: pointer;
-    font-weight: 500;
     color: white;
     transition: 0.3s all;
 }
