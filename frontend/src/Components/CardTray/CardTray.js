@@ -6,6 +6,7 @@ import "./CardTray.css";
 import { useDispatch, useSelector } from "react-redux";
 
 import { fetchProducts } from "../../redux/slices/productSlice";
+import Loader from '../../Components/Loader/loader'
 
 function CardTray() {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ function CardTray() {
     dispatch(fetchProducts());
   }, [dispatch]);
   if (status === "loading") {
-    return <div>Loading...</div>;
+    return <Loader/>;
   }
 
   if (status === "failed") {
