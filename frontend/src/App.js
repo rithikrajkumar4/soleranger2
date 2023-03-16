@@ -13,6 +13,7 @@ const Register = lazy(() =>import('./Components/Register/Register'));
 const Admin = lazy(() => import('./Components/Admin/Admin'))
 const CreateProduct = lazy(() => import('./Components/Admin/Create/CreateProduct'))
 const Loader = lazy(() => import('./Components/Loader/loader'))
+const ProductDetail = lazy(()=>import('./Components/ProductDetails/productDeatil.js'))
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
               <Route path='/admin' element={<Admin/>}></Route>
               <Route path='/admin/create-product' element={<CreateProduct/>}></Route>
               <Route path='/product' element={<CreateProduct/>}></Route>
+              <Route path='/product/:id' element={<ProductDetail/>}></Route>
+              
           </Routes>
         </Suspense>
       </BrowserRouter>

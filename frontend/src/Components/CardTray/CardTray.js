@@ -33,6 +33,7 @@ function CardTray() {
             {product_list.map((product) => (
               <div className="col-lg-4 col-md-6 my-4" key={product._id}>
                 <ViewCard
+                id={product._id}
                   image={img1}
                   product_name={product.name}
                   brand_name={product.category}
