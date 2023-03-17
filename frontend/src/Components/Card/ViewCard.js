@@ -1,9 +1,9 @@
 import React from 'react'
 import './ViewCard.css'
-
-function ViewCard({image,product_name,brand_name,price,sizes}) {
+import { Link } from 'react-router-dom';
+function ViewCard({id,image,product_name,brand_name,price,sizes}) {
   return (
-    <div className='view__card'>
+    <Link className='view__card' to={`product/${id}`}>
         <img src={image} alt="card__image" className='card__image' loading='lazy'/>
         <div className="card__name">
             {product_name}
@@ -17,7 +17,7 @@ function ViewCard({image,product_name,brand_name,price,sizes}) {
         <div className="card__sizes">
             {sizes}
         </div>
-    </div>
+    </Link>
   )
 }
 
