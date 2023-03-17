@@ -2,11 +2,17 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import BASE_URL from "../baseurl";
 
-export const fetchSingleProduct = (id) =>
-  createAsyncThunk("product/getProductDetails", async () => {
-    const req = await axios.get(`${BASE_URL}api/v1/product/${id}`);
-    return req.data;
+export const fetchSingleProduct = () =>
+  createAsyncThunk("product/getProductDetails", async (id,thunkAPI) => {
+    const req = await axios.get(`${BASE_URL}api/v1/product/${id}`)
+    .then((res) => {
+      console.log("working") ;
+      console.log(res) ;
+      return req.data;
+    })
+    .catch(err => console.log(err));
   });
+
 const productDetailSlice = createSlice({
   name: "ProductSingleDetail",
   initialState: {
@@ -29,5 +35,5 @@ const productDetailSlice = createSlice({
       });
   },
 });
-
+ 
 export default productDetailSlice.reducer;

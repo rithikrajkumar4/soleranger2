@@ -3,7 +3,7 @@ import axios from "axios";
 import BASE_URL from '../baseurl'
 export const fetchProducts = createAsyncThunk(
   'product/getProducts',
-  async () => {
+  async (thunkAPI) => {
     const req = await axios.get(`${BASE_URL}api/v1/products`);
     return req.data;
   }
