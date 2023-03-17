@@ -18,10 +18,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-<<<<<<< HEAD
-      <AlertProvider template={() => AlertTemplate} {...options}>
-=======
->>>>>>> d3ecaf22083864ea87c926f73351ec4ec217a683
         <App />
     </Provider>
   </React.StrictMode>
