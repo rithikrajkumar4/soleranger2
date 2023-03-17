@@ -3,20 +3,29 @@ import React, { Fragment, useEffect } from "react";
 import Footer from "../Footer/Footer";
 import Navbar from "../modals/Navbar/Navbar";
 import Logo from '../Logo/Logo';
+import MainNav from '../MainNav/MainNav';
 import {useNavigate,useParams} from 'react-router-dom'
-import { useDispatch, useSelector } from "react-redux";
-import { fetchSingleProduct } from "../../redux/slices/productDetail";
+import axios from "axios";
+import BASE_URL from "../../redux/baseurl";
+// import { useDispatch, useSelector } from "react-redux";
+// import { fetchSingleProduct } from "../../redux/slices/productDetail";
 
 
 const ProductDetail = () => {
-  const dispatch = useDispatch() ;
+  // const dispatch = useDispatch() ;
   const navigate = useNavigate() ;
   const productId = useParams() ;
 
   useEffect(() =>{
-    console.log(productId.id);
-    dispatch(fetchSingleProduct(productId.id))
-  },[dispatch]);
+    async function fetchProduct ()  {
+      console.log(productId) ;
+      const request = await  axios(`${BASE_URL}api/v1/product/${productId.id}`)
+      console.log('working') ;
+      console.log(request.data) ;
+    }
+
+    fetchProduct() ;
+  },[]);
 
   return (
     <div>
@@ -25,6 +34,7 @@ const ProductDetail = () => {
         <Logo  className='logo'/>
       </div>
       
+      {/* <MainNav/> */}
       <div className="container-lg">
         <div className="row">
           <div className="col">
@@ -32,11 +42,6 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-<<<<<<< HEAD:frontend/src/Components/ProductDetails/productDetail.js
-      <Footer/>
-      </div>
-    )}
-=======
 =======
 import React, { Fragment } from "react";
 import Footer from "../Footer/Footer";
@@ -57,5 +62,4 @@ const ProductDetail = () => {
   );
 };
 
->>>>>>> parent of 57cf21d (product page ok):frontend/src/Components/ProductDetails/productDeatail.js
 export default ProductDetail;
