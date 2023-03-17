@@ -13,7 +13,7 @@ const Register = lazy(() =>import('./Components/Register/Register'));
 const Admin = lazy(() => import('./Components/Admin/Admin'))
 const CreateProduct = lazy(() => import('./Components/Admin/Create/CreateProduct'))
 const Loader = lazy(() => import('./Components/Loader/loader'))
-const ProductDetail = lazy(()=>import('./Components/ProductDetails/productDeatil.js'))
+const ProductDetail = lazy(()=>import('./Components/ProductDetails/productDeatail.js'))
 
 function App() {
   return (
