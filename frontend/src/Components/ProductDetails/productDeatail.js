@@ -1,5 +1,5 @@
 
-import React, { Fragment, useEffect } from "react";
+import React, {  useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import Navbar from "../modals/Navbar/Navbar";
 import Logo from '../Logo/Logo';
@@ -16,12 +16,18 @@ const ProductDetail = () => {
   const navigate = useNavigate() ;
   const productId = useParams() ;
 
+  const [product,setProduct] = useState([]) ;
+
   useEffect(() =>{
     async function fetchProduct ()  {
-      console.log(productId) ;
-      const request = await  axios(`${BASE_URL}api/v1/product/${productId.id}`)
-      console.log('working') ;
-      console.log(request.data) ;
+      await  axios(`${BASE_URL}api/v1/product/${productId.id}`)
+      .then((res) => {
+        // console.log('working') ;
+        // console.log(res.data.product) ;
+        setProduct(res.data.product) ;
+        // console.log(product) ;
+      })
+      .catch((err) => console.log(err)) ;
     }
 
     fetchProduct() ;
@@ -38,7 +44,7 @@ const ProductDetail = () => {
       <div className="container-lg">
         <div className="row">
           <div className="col">
-
+            {console.log(product)}
           </div>
         </div>
       </div>
