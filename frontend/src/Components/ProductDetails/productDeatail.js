@@ -9,6 +9,7 @@ import axios from "axios";
 import ColorTab from "../modals/ColorTab/ColorTab";
 import BASE_URL from "../../redux/baseurl";
 import img from '../Assets/Carousel/carousel_img1.jpeg'
+import { IKImage } from "imagekitio-react";
 // import Zoom from 'react-img-hover-zoom'
 // import { useDispatch, useSelector } from "react-redux";
 // import { fetchSingleProduct } from "../../redux/slices/productDetail";
@@ -16,6 +17,7 @@ import img from '../Assets/Carousel/carousel_img1.jpeg'
 
 const ProductDetail = () => {
   // const dispatch = useDispatch() ;
+  const urlEndpoint = "https://ik.imagekit.io/solerangers/";
   const navigate = useNavigate() ;
   const productId = useParams() ;
   const [isLoad,setIsLoad] = useState(true) ;
@@ -50,9 +52,44 @@ const ProductDetail = () => {
         <div className="row">
           <div className="col-lg-6" align='center'>
             {/* <Zoom img src={img}  className="product__image"/> */}
-            <div className="img__wrapper">
+            {/* <div className="img__wrapper">
               <img src={img} alt="product__image" className="product__image"/>
+            </div> */}
+
+            <div id="productCarousel" class="carousel slide carousel-fade">
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                <IKImage
+                  urlEndpoint={urlEndpoint}
+                  path={`solerangers/${product.images}/1.png`}
+                  className='d-block w-100 carousel__image'
+                />
+                </div>
+                <div className="carousel-item">
+                  <IKImage
+                    urlEndpoint={urlEndpoint}
+                    path={`solerangers/${product.images}/2.png`}
+                    className='d-block w-100 carousel__image'
+                  />
+                </div>
+                <div className="carousel-item">
+                  <IKImage
+                    urlEndpoint={urlEndpoint}
+                    path={`solerangers/${product.images}/3.png`}
+                    className='d-block w-100 carousel__image'
+                  />
+                </div>
+              </div>
+              <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+              </button>
             </div>
+
           </div>
           <div className="col-lg-4 mx-lg-5 productDetails__col">
             <div className="productDetails__name">
@@ -92,7 +129,7 @@ const ProductDetail = () => {
             <div className="productDetails__desc">
               <hr />
               {product.description}
-              {console.log(product.stock)}
+              {console.log(product)}
             </div>
           </div>
         </div>

@@ -14,6 +14,7 @@ function ViewCard({ id, image, product_name, brand_name, price, sizes }) {
         urlEndpoint={urlEndpoint}
         path={`solerangers/${image}/1.png`}
         className='card__image'
+        loading="lazy"
       />
       <div className="card__name">{product_name}</div>
       <div className="card__brand">{brand_name}</div>
