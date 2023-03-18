@@ -1,5 +1,4 @@
 import React from 'react'
-import Heading from '../modals/Heading/Heading'
 import './Insta.css'
 import instaImage from '../Assets/insta.jpg'
 

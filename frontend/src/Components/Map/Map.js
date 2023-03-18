@@ -1,5 +1,4 @@
 import React from 'react'
-import Heading from '../modals/Heading/Heading'
 import './Map.css'
 
 function Map() {
