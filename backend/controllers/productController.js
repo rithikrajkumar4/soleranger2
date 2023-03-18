@@ -18,7 +18,7 @@ exports.createProduct = catchAsyncErrors(
 
 // Get All Products
 exports.getAllProducts =catchAsyncErrors( async (req,res)=>{
-    const resultPerPage = 6;
+    const resultPerPage = 9;
     const productCount = await Product.countDocuments();
 
     const apiFeature = new ApiFeatures(Product.find(),req.query).search().filter().pagination(resultPerPage);

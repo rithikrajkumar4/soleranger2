@@ -25,6 +25,231 @@
     "brand":"Nike",
     "category":"shoe",
     "stock":[{"key":"uk-9.5","value":1}]
+},
+{
+    "name":"Nike Air Force 1 '07",
+    "description":"It doesn't get more legendary than this. Designed to turn heads, the Nike Air Force 1 '07 crosses hardwood comfort with off-court flair. Its crisp leather upper looks sleek and fresh, while lustrous Swoosh logos give off an almost iridescent look to add the perfect amount of flash to make you shine. Consider them a slam dunk.",
+    "price":12000,
+    "images":"Nike_Air_Force_107",
+    "brand":"Nike",
+    "category":"shoe",
+    "stock":[
+        {"key":"uk-6","value":2},
+        {"key":"uk-7","value":3},
+        {"key":"uk-8","value":4},
+        {"key":"uk-9","value":2},
+        {"key":"uk-10","value":2}
+    ]
+},
+{
+    "name":"Nike Dunk Low Retro Premium",
+    "description":"Come, come to the cauldron where vintage hoops style boils and bubbles. Watch shadows creep from beneath the Swoosh. Like eyes peering out from the dark, dark night, the reflective-design upper brings a trick-or-treater shine. Lace up and beware, this basketball icon is sure to bring a little scare.",
+    "price":12000,
+    "images":"Nike_Air_Force_107",
+    "brand":"Nike",
+    "category":"shoe",
+    "stock":[
+        {"key":"uk-6","value":2},
+        {"key":"uk-7","value":3},
+        {"key":"uk-8","value":4},
+        {"key":"uk-9","value":2},
+        {"key":"uk-10","value":2}
+    ]
+},
+{
+    "name":"Air Jordan 6 Retro",
+    "description":"MJ's sixth signature shoe debuted during the 1990–1991 season as His Airness battled rivals in pursuit of an elusive first championship.Now, it's back in a variety of colour schemes.Gear up for the 30th anniversary of the Air Jordan 6 with this timeless classic..",
+    "price":12000,
+    "images":"Air_Jordan_6_Retro",
+    "brand":"Nike",
+    "category":"shoe",
+    "stock":[
+        {"key":"uk-6","value":2},
+        {"key":"uk-7","value":3},
+        {"key":"uk-8","value":4},
+        {"key":"uk-9","value":2},
+        {"key":"uk-10","value":2}
+    ]
+},
+{
+    "name":"Air Jordan Legacy 312",
+    "description":"Air_Jordan_Legacy_312 description",
+    "price":12000,
+    "images":"Air_Jordan_Legacy_312",
+    "brand":"Nike",
+    "category":"shoe",
+    "stock":[
+        {"key":"uk-6","value":2},
+        {"key":"uk-7","value":3},
+        {"key":"uk-8","value":4},
+        {"key":"uk-9","value":2},
+        {"key":"uk-10","value":2}
+    ]
+},
+{
+    "name":"Nike Dunk Mid",
+    "description":"Nike Dunk Mid description",
+    "price":12000,
+    "images":"Nike_Dunk_Mid",
+    "brand":"Nike",
+    "category":"shoe",
+    "stock":[
+        {"key":"uk-6","value":2},
+        {"key":"uk-7","value":3},
+        {"key":"uk-8","value":4},
+        {"key":"uk-9","value":2},
+        {"key":"uk-10","value":2}
+    ]
+},
+{
+    "name":"Nike Dunk Mid 2",
+    "description":"Nike Dunk Mid 2 description",
+    "price":12000,
+    "images":"Nike_Dunk_Mid2",
+    "brand":"Nike",
+    "category":"shoe",
+    "stock":[
+        {"key":"uk-6","value":2},
+        {"key":"uk-7","value":3},
+        {"key":"uk-8","value":4},
+        {"key":"uk-9","value":2},
+        {"key":"uk-10","value":2}
+    ]
+},
+{
+    "name":"Zion 2 x Naruto PF",
+    "description":"Zion 2 x Naruto PF description",
+    "price":12000,
+    "images":"Zion_2_x_Naruto_PF",
+    "brand":"Nike",
+    "category":"shoe",
+    "stock":[
+        {"key":"uk-6","value":2},
+        {"key":"uk-7","value":3},
+        {"key":"uk-8","value":4},
+        {"key":"uk-9","value":2},
+        {"key":"uk-10","value":2}
+    ]
+},
+{
+    "name":"Air Jordan XXXVII Zion",
+    "description":"Air Jordan XXXVII Zion description",
+    "price":12000,
+    "images":"Air_Jordan_XXXVII_Zion",
+    "brand":"Nike",
+    "category":"shoe",
+    "stock":[
+        {"key":"uk-6","value":2},
+        {"key":"uk-7","value":3},
+        {"key":"uk-8","value":4},
+        {"key":"uk-9","value":2},
+        {"key":"uk-10","value":2}
+    ]
+},
+{
+    "name":"Jordan 1 KO",
+    "description":"Jordan 1 KO description",
+    "price":12000,
+    "images":"Jordan_1_KO",
+    "brand":"Nike",
+    "category":"shoe",
+    "stock":[
+        {"key":"uk-6","value":2},
+        {"key":"uk-7","value":3},
+        {"key":"uk-8","value":4},
+        {"key":"uk-9","value":2},
+        {"key":"uk-10","value":2}
+    ]
+},
+{
+    "name":"Nike Air Max 1 Premium",
+    "description":"Nike Air Max 1 Premium description",
+    "price":12000,
+    "images":"Nike_Air_Max_1_Premium",
+    "brand":"Nike",
+    "category":"shoe",
+    "stock":[
+        {"key":"uk-6","value":2},
+        {"key":"uk-7","value":3},
+        {"key":"uk-8","value":4},
+        {"key":"uk-9","value":2},
+        {"key":"uk-10","value":2}
+    ]
+},
+{
+    "name":"Air Jordan 1 Low G",
+    "description":"Air Jordan 1 Low G description",
+    "price":12000,
+    "images":"Air_Jordan_1_Low_G",
+    "brand":"Nike",
+    "category":"shoe",
+    "stock":[
+        {"key":"uk-6","value":2},
+        {"key":"uk-7","value":3},
+        {"key":"uk-8","value":4},
+        {"key":"uk-9","value":2},
+        {"key":"uk-10","value":2}
+    ]
+},
+{
+    "name":"Air Jordan 3 Retro SE",
+    "description":"Air Jordan 3 Retro SE description",
+    "price":12000,
+    "images":"Air_Jordan_3_Retro_SE",
+    "brand":"Nike",
+    "category":"shoe",
+    "stock":[
+        {"key":"uk-6","value":2},
+        {"key":"uk-7","value":3},
+        {"key":"uk-8","value":4},
+        {"key":"uk-9","value":2},
+        {"key":"uk-10","value":2}
+    ]
+},
+{
+    "name":"Jordan Nu Retro 1 Fresh Ink",
+    "description":"Jordan Nu Retro 1 Fresh Ink description",
+    "price":12000,
+    "images":"Jordan_Nu_Retro_1_Fresh_Ink",
+    "brand":"Nike",
+    "category":"shoe",
+    "stock":[
+        {"key":"uk-6","value":2},
+        {"key":"uk-7","value":3},
+        {"key":"uk-8","value":4},
+        {"key":"uk-9","value":2},
+        {"key":"uk-10","value":2}
+    ]
+},
+{
+    "name":"Nike Dunk Low SE",
+    "description":"Nike Dunk Low SE description",
+    "price":12000,
+    "images":"Nike_Dunk_Low_SE",
+    "brand":"Nike",
+    "category":"shoe",
+    "stock":[
+        {"key":"uk-6","value":2},
+        {"key":"uk-7","value":3},
+        {"key":"uk-8","value":4},
+        {"key":"uk-9","value":2},
+        {"key":"uk-10","value":2}
+    ]
+},
+{
+    "name":"Nike Dunk Low Retro Premium 2",
+    "description":"Nike Dunk Low Retro Premium 2  description",
+    "price":12000,
+    "images":"Nike_Dunk_Low_Retro_Premium2",
+    "brand":"Nike",
+    "category":"shoe",
+    "stock":[
+        {"key":"uk-6","value":2},
+        {"key":"uk-7","value":3},
+        {"key":"uk-8","value":4},
+        {"key":"uk-9","value":2},
+        {"key":"uk-10","value":2}
+    ]
 }
 
 ]
