@@ -76,7 +76,7 @@ const ProductDetail = () => {
                 </div>
               </div>
               <div className="productDetails__quantity">
-                <span className="productQuantity__heading"> Qunatity </span>
+                <span className="productQuantity__heading"> quantity </span>
                 <div className="quantity__selector">
                   <div className="quantity__decrease" onClick={()=> setQuantity(qunatity-1)}>-</div>
                   <div className="quantity__num">{qunatity}</div>
