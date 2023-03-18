@@ -1,6 +1,7 @@
 
 .view__card{
     max-width: 300px;
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
     text-decoration: none;

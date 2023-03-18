@@ -8,7 +8,8 @@ function Insta() {
     <div className="container-lg home__insta" id='instagram'>
         <div className="row" align='center'>
             <div className="col-12">
-                <Heading heading__name={"- Instagram -"}/>
+                <h1 className="home__heading"> instagram </h1>
+                <hr />
             </div>
             <div className="col-12 insta__col">
                <a href="https://www.instagram.com/solerangers/?igshid=YmMyMTA2M2Y="> <img src={instaImage} alt="Instagram Post" className='instagram__image'/> </a>

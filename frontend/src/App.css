@@ -1,3 +1,9 @@
 .logo{
     cursor: pointer;
 }
+
+.home__heading{
+    font-size: 4rem;
+    font-family:monospace;
+    text-transform: uppercase;
+}

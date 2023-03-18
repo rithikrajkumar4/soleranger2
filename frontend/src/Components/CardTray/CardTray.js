@@ -4,6 +4,7 @@ import img1 from "../Assets/Carousel/carousel_img1.jpeg";
 import Heading from "../modals/Heading/Heading";
 import "./CardTray.css";
 import { useDispatch, useSelector } from "react-redux";
+import './CardTray.css'
 
 import { fetchProducts } from "../../redux/slices/productSlice";
 import Loader from '../../Components/Loader/loader';
@@ -31,7 +32,8 @@ function CardTray() {
       <div className="cardTray container-lg" id="products">
         <div>
           <div className="row" align="center">
-            <Heading heading__name={"Products"} />
+            <h1 className="home__heading"> Products </h1>
+            <hr />
             {product_list.map((product) => (
               <div className="col-lg-4 col-md-6 my-4" key={product._id}>
                 <ViewCard
