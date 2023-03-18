@@ -17,7 +17,7 @@ function ViewCard({ id, image, product_name, brand_name, price, sizes }) {
       />
       <div className="card__name">{product_name}</div>
       <div className="card__brand">{brand_name}</div>
-      <div className="card__price">Rs. {price}</div>
+      <div className="card__price">₹ {price}</div>
       <div className="card__sizes">{sizes}</div>
     </Link>
   );

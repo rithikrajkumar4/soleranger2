@@ -44,7 +44,7 @@ function CardTray() {
                   id={product._id}
                   image={product.images}
                   product_name={product.name}
-                  brand_name={product.category}
+                  brand_name={product.brand}
                   price={product.price}
                 />
               </div>
