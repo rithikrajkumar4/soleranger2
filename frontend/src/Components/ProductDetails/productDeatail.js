@@ -4,7 +4,6 @@ import './productDeatail.css'
 import Footer from "../Footer/Footer";
 import Navbar from "../modals/Navbar/Navbar";
 import Logo from '../Logo/Logo';
-import MainNav from '../MainNav/MainNav';
 import {useNavigate,useParams} from 'react-router-dom'
 import axios from "axios";
 import ColorTab from "../modals/ColorTab/ColorTab";

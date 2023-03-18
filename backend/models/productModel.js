@@ -15,14 +15,7 @@ const productSchema = new mongoose.Schema({
         required:[true,"Please Enter The Price"],
         maxLength:[9,"Price Can exceeds 9 characters"],
     },
-    images:[{
-        public_id:{
-            type:String,
-            required:true,
-        },
-        data:Buffer,
-        contentType:String
-        }],
+    images:String,
     brand:{
         type:String,
         required:true,
