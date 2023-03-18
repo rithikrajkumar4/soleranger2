@@ -89,7 +89,7 @@ const ProductDetail = () => {
             <div className="productDetails__desc">
               <hr />
               {product.description}
-              {console.log(product)}
+              {console.log(product.stock)}
             </div>
           </div>
         </div>

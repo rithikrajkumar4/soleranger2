@@ -246,3 +246,14 @@ exports.deleteUser = catchAsyncErrors( async (req,res,next)=>{
     })
  
  })
+
+
+
+
+
+
+//  navbar
+// products shadow
+// instagram 
+// name instead of login
+// admin select
