@@ -122,3 +122,8 @@
 .productDetails{
     background-color: rgb(246,246,246);
 }
+
+.size__container{
+    display: flex;
+    justify-content: space-between;
+}

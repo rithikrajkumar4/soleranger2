@@ -10,6 +10,7 @@ import ColorTab from "../modals/ColorTab/ColorTab";
 import BASE_URL from "../../redux/baseurl";
 import img from '../Assets/Carousel/carousel_img1.jpeg'
 import { IKImage } from "imagekitio-react";
+import '../Loader/loader'
 // import Zoom from 'react-img-hover-zoom'
 // import { useDispatch, useSelector } from "react-redux";
 // import { fetchSingleProduct } from "../../redux/slices/productDetail";
@@ -20,18 +21,17 @@ const ProductDetail = () => {
   const urlEndpoint = "https://ik.imagekit.io/solerangers/";
   const navigate = useNavigate() ;
   const productId = useParams() ;
-  const [isLoad,setIsLoad] = useState(true) ;
+  const [isLoading,setIsLoading] = useState(true) ;
   const [product,setProduct] = useState([]) ;
   const [qunatity,setQuantity] = useState(1) ;
+  const [size,setSize] = useState([]) ;
 
   useEffect(() =>{
     async function fetchProduct ()  {
       await  axios(`${BASE_URL}api/v1/product/${productId.id}`)
       .then((res) => {
-        // console.log('working') ;
-        // console.log(res.data.product) ;
         setProduct(res.data.product) ;
-        // console.log(product) ;
+        setIsLoading(false) ;
       })
       .catch((err) => console.log(err)) ;
     }
@@ -48,18 +48,17 @@ const ProductDetail = () => {
       
       {/* <MainNav/> */}
 
-      <div className="container-lg">
+      {isLoading?(
+        <loader/>
+      ):(
+
+        <div className="container-lg productDetails">
         <div className="row">
           <div className="col-lg-6" align='center'>
             {/* <Zoom img src={img}  className="product__image"/> */}
             {/* <div className="img__wrapper">
               <img src={img} alt="product__image" className="product__image"/>
             </div> */}
-            {console.log(<IKImage
-                    urlEndpoint={urlEndpoint}
-                    path={`solerangers/${product.images}`}
-                    className='d-block w-100 carousel__image'
-                  />)}
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
               <div className="carousel-inner">
                 <div className="carousel-item active">
@@ -120,12 +119,15 @@ const ProductDetail = () => {
               <div className="porductDetails__size">
                 <span className="productSize__heading"> size </span>
                 <div className="product__sizes">
-                  <ColorTab name='uk7'/>
-                  {/* {product.stock.map((sizeArray) => (
-                    <>
-                      {console.log(sizeArray) }
-                    </>
-                  ) )} */}
+                  
+                  {/* {console.log(product.stock)} */}
+                  <div className="size__container">
+                    {product.stock.map((sizeArray) => (
+                      
+                        <ColorTab name={sizeArray.key} key={sizeArray._id} />
+                      
+                    ) )}
+                  </div>
                   {/* {product.stock} */}
                 </div>
               </div>
@@ -150,11 +152,15 @@ const ProductDetail = () => {
               
               {product.description}
               </p>
-              {console.log(product.stock)}
+            
             </div>
           </div>
         </div>
       </div>
+
+      )}
+
+      
       <Footer/>
       </div>
     )}
