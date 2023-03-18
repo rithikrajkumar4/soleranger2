@@ -13,10 +13,10 @@ function Carousel() {
           <img src={img1} className="d-block w-100 image" alt="..."/>
         </div>
         <div className="carousel-item">
-          <img src={img2} className="d-block w-100" alt="..."/>
+          <img src={img2} className="d-block w-100 image" alt="..."/>
         </div>
         <div className="carousel-item">
-          <img src={img3} className="d-block w-100" alt="..."/>
+          <img src={img3} className="d-block w-100 image" alt="..."/>
         </div>
       </div>
       <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">

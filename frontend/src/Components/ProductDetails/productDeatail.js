@@ -55,15 +55,19 @@ const ProductDetail = () => {
             {/* <div className="img__wrapper">
               <img src={img} alt="product__image" className="product__image"/>
             </div> */}
-
-            <div id="productCarousel" class="carousel slide carousel-fade">
+            {console.log(<IKImage
+                    urlEndpoint={urlEndpoint}
+                    path={`solerangers/${product.images}`}
+                    className='d-block w-100 carousel__image'
+                  />)}
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                <IKImage
-                  urlEndpoint={urlEndpoint}
-                  path={`solerangers/${product.images}/1.png`}
-                  className='d-block w-100 carousel__image'
-                />
+                  <IKImage
+                    urlEndpoint={urlEndpoint}
+                    path={`solerangers/${product.images}/1.png`}
+                    className='d-block w-100 carousel__image'
+                  />
                 </div>
                 <div className="carousel-item">
                   <IKImage
@@ -79,12 +83,26 @@ const ProductDetail = () => {
                     className='d-block w-100 carousel__image'
                   />
                 </div>
+                <div className="carousel-item">
+                  <IKImage
+                    urlEndpoint={urlEndpoint}
+                    path={`solerangers/${product.images}/4.png`}
+                    className='d-block w-100 carousel__image'
+                  />
+                </div>
+                <div className="carousel-item">
+                  <IKImage
+                    urlEndpoint={urlEndpoint}
+                    path={`solerangers/${product.images}/5.png`}
+                    className='d-block w-100 carousel__image'
+                  />
+                </div>
               </div>
-              <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+              <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span className="visually-hidden">Previous</span>
               </button>
-              <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+              <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
                 <span className="visually-hidden">Next</span>
               </button>
@@ -128,8 +146,11 @@ const ProductDetail = () => {
             </form>
             <div className="productDetails__desc">
               <hr />
+              <p className="product__description">
+              
               {product.description}
-              {console.log(product)}
+              </p>
+              {console.log(product.stock)}
             </div>
           </div>
         </div>
