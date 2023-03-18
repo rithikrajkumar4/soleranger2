@@ -40,7 +40,7 @@ const ProductDetail = () => {
   },[]);
 
   return (
-    <div>
+    <div className="productDetails">
       <Navbar />
       <div className="logo__" onClick={() => navigate('/')}>
         <Logo  className='logo product__logo'/>
@@ -52,7 +52,7 @@ const ProductDetail = () => {
         <loader/>
       ):(
 
-        <div className="container-lg productDetails">
+        <div className="container-lg ">
         <div className="row">
           <div className="col-lg-6" align='center'>
             {/* <Zoom img src={img}  className="product__image"/> */}
