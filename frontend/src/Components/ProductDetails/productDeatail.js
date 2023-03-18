@@ -10,6 +10,7 @@ import axios from "axios";
 import ColorTab from "../modals/ColorTab/ColorTab";
 import BASE_URL from "../../redux/baseurl";
 import img from '../Assets/Carousel/carousel_img1.jpeg'
+// import Zoom from 'react-img-hover-zoom'
 // import { useDispatch, useSelector } from "react-redux";
 // import { fetchSingleProduct } from "../../redux/slices/productDetail";
 
@@ -49,7 +50,10 @@ const ProductDetail = () => {
       <div className="container-lg">
         <div className="row">
           <div className="col-lg-6" align='center'>
-            <img src={img} alt="product__image" className="product__image"/>
+            {/* <Zoom img src={img}  className="product__image"/> */}
+            <div className="img__wrapper">
+              <img src={img} alt="product__image" className="product__image"/>
+            </div>
           </div>
           <div className="col-lg-4 mx-lg-5 productDetails__col">
             <div className="productDetails__name">
