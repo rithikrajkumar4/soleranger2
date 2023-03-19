@@ -8,7 +8,6 @@ import {useNavigate,useParams} from 'react-router-dom'
 import axios from "axios";
 import ColorTab from "../modals/ColorTab/ColorTab";
 import BASE_URL from "../../redux/baseurl";
-import img from '../Assets/Carousel/carousel_img1.jpeg'
 import { IKImage } from "imagekitio-react";
 import '../Loader/loader'
 // import Zoom from 'react-img-hover-zoom'
@@ -24,7 +23,7 @@ const ProductDetail = () => {
   const [isLoading,setIsLoading] = useState(true) ;
   const [product,setProduct] = useState([]) ;
   const [qunatity,setQuantity] = useState(1) ;
-  const [size,setSize] = useState([]) ;
+  // const [size,setSize] = useState([]) ;
 
   useEffect(() =>{
     async function fetchProduct ()  {
@@ -37,7 +36,7 @@ const ProductDetail = () => {
     }
 
     fetchProduct() ;
-  },[]);
+  },[productId]);
 
   return (
     <div className="productDetails">

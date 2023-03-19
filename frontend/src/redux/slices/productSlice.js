@@ -3,8 +3,8 @@ import axios from "axios";
 import BASE_URL from '../baseurl'
 export const fetchProducts = createAsyncThunk(
   'product/getProducts',
-  async (thunkAPI) => {
-    const req = await axios.get(`${BASE_URL}api/v1/products`);
+  async (resultPerPage) => {
+    const req = await axios.get(`${BASE_URL}api/v1/products?page=${resultPerPage}`);
     return req.data;
   }
 );
@@ -14,7 +14,8 @@ const productSlice = createSlice({
   initialState: {
     products: [],
     status: 'idle',
-    error: null
+    error: null,
+    resultPerPage:0
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -25,6 +26,7 @@ const productSlice = createSlice({
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.products = action.payload;
+        state.resultPerPage = action.payload.resultPerPage
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.status = 'failed';
