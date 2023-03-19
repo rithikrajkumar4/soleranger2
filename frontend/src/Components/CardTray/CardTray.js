@@ -1,37 +1,43 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ViewCard from "../Card/ViewCard";
-import img1 from "../Assets/Carousel/carousel_img1.jpeg";
 import "./CardTray.css";
 import { useDispatch, useSelector } from "react-redux";
 import "./CardTray.css";
+import Pagination from "react-js-pagination";
 
 import { fetchProducts } from "../../redux/slices/productSlice";
 import Loader from "../../Components/Loader/loader";
 
-
 function CardTray() {
+
+  const [currentPage,setCurrentPage] = useState(1);
+
   const dispatch = useDispatch();
+
   const products = useSelector((state) => state.products.products);
   const status = useSelector((state) => state.products.status);
   const error = useSelector((state) => state.products.error);
+  const resultPerPage = useSelector((state)=>state.products.resultPerPage);
+
+  console.log(resultPerPage);
+  const setCurrentPageNo =(e)=>{
+    setCurrentPage(e)
+  }
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+    dispatch(fetchProducts(currentPage));
+  }, [dispatch,currentPage]);
 
   if (status === "loading") {
     return <Loader />;
   }
 
   if (status === "failed") {
-    return (
-      <div>
-        Error: {error}{" "}
-        
-      </div>
-    );
+    return <div>Error: {error} </div>;
   }
   if (status === "succeeded") {
     const product_list = products.product;
+    const total_products = products.productCount;
+
     return (
       <div className="cardTray container-lg" id="products">
         <div>
@@ -49,6 +55,22 @@ function CardTray() {
                 />
               </div>
             ))}
+            <div className="paginationBox">
+              <Pagination 
+                activePage={currentPage}
+                itemsCountPerPage={resultPerPage}
+                totalItemsCount={total_products}
+                onChange={setCurrentPageNo}
+                nextPageText="Next"
+                prevPageText="Prev"
+                firstPageText="First"
+                lastPageText="Last"
+                itemClass="page-item"
+                linkClass="page-link"
+                activeClass="pageItemActive"
+                activeLinkClass="pageLinkActive"
+              />
+            </div>
           </div>
         </div>
       </div>
