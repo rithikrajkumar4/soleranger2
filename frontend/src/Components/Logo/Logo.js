@@ -1,6 +1,7 @@
 import React from 'react'
 import './Logo.css'
 import logo from '../Assets/logo/logo.png'
+import MenuIcon from '@mui/icons-material/Menu';
 
 function Logo() {
   return (

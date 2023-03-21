@@ -1,0 +1,22 @@
+.construction__container{
+    background-color: rgb(246,246,246);
+    height: 100vh;
+    margin: auto;
+}
+
+.construction__heading{
+    font-size: 3rem;
+    /* color: white; */
+}
+
+.construction__link{
+    /* color: white; */
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.construction__logo{
+    width: 300px;
+    margin-top: 20vh;
+    cursor: pointer;
+}

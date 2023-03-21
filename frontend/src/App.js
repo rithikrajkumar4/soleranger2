@@ -6,7 +6,6 @@ import {
   Route,
 } from 'react-router-dom' ;
 
-
 const Home = lazy(() =>import('./Components/HomePage/Home'));
 const Login = lazy(() =>import('./Components/Login/Login'));
 const Register = lazy(() =>import('./Components/Register/Register'));
@@ -14,6 +13,7 @@ const Admin = lazy(() => import('./Components/Admin/Admin'))
 const CreateProduct = lazy(() => import('./Components/Admin/Create/CreateProduct'))
 const Loader = lazy(() => import('./Components/Loader/loader'))
 const ProductDetail = lazy(()=>import('./Components/ProductDetails/productDeatail.js'))
+const Construction = lazy(()=>import('./Components/Construction/Construction'))
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
               <Route path='/admin/create-product' element={<CreateProduct/>}></Route>
               <Route path='/product' element={<CreateProduct/>}></Route>
               <Route path='/product/:id' element={<ProductDetail/>}></Route>
-              
+              <Route path='/:random' element={<Construction/>}></Route>
           </Routes>
         </Suspense>
       </BrowserRouter>

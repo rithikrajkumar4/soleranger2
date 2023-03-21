@@ -16,9 +16,11 @@
     padding-bottom: 10px;
     padding-left: 1em;
     padding-right: 1em;
+    
 }
 
 .mainnav__list a{
+    /* text-transform:uppercase; */
     text-decoration: none !important;
     color: black;
     text-transform: capitalize;

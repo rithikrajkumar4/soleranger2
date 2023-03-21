@@ -17,9 +17,9 @@ function Home() {
       {/* preNav */}
       <Navbar/>
       {/* logo */}
-        <Logo/>
+        {/* <Logo/> */}
       {/* navbar */}
-      <MainNav/>
+      {/* <MainNav/> */}
       {/* carousel */}
         <Carousel/>
       {/* cardsTray */}

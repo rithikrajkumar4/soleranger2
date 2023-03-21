@@ -5,6 +5,10 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import './Navbar.css'
 import {useNavigate} from 'react-router-dom' ;
 import { useSelector } from 'react-redux';
+import logo from '../../Assets/logo/logo.png'
+import MenuIcon from '@mui/icons-material/Menu';
+
+
 
 function Navbar() {
 
@@ -12,29 +16,54 @@ function Navbar() {
   const {user} = useSelector(state => state.user) ;
 
   return (
-    <div className='container-fluid prenav'>
-        <nav className='prenavBar'>
-          <div className="nav__search">
-            <input type="text" placeholder='Search Here' className="nav__searchInput" />
-            <SearchIcon className='nav__searchIcon'/>
-          </div>
-          <div className="nav__rightSide">
-            <div className="nav__userName">
-              Hii !! { !user ? (<> Guest </>) :( <> log in </> ) }
+    <>
+      {/* Navbar Top */}
+      <div className='container-fluid prenav'>
+          <nav className='prenavBar'>
+            <div className="nav__search">
+              <input type="text" placeholder='Search Here' className="nav__searchInput" />
+              <SearchIcon className='nav__searchIcon'/>
             </div>
-            
-            <div className="nav__user nav__icons">
-              <AccountCircleOutlinedIcon sx={{ fontSize: 28 }} onClick={() => navigate('/login')} className='accountIcon'/>
-            </div>
+            <div className="nav__rightSide">
+              <div className="nav__userName">
+                Hii !! { !user ? (<> Guest </>) :( <> log in </> ) }
+              </div>
+              
+              <div className="nav__user nav__icons">
+                <AccountCircleOutlinedIcon sx={{ fontSize: 28 }} onClick={() => navigate('/login')} className='accountIcon'/>
+              </div>
 
-            <div className="nav__cart nav__icons">
-                <ShoppingCartOutlinedIcon className='nav__shopCart'  sx={{ fontSize: 28 }}/>
+              <div className="nav__cart nav__icons">
+                  <ShoppingCartOutlinedIcon className='nav__shopCart'  sx={{ fontSize: 28 }}/>
+              </div>
             </div>
-          </div>
-        </nav>
+            <div className="nav__toggler">
+              <MenuIcon/>
+            </div>
+          </nav>
+      </div>
 
-    </div>
-  )
+      {/* Logo */}
+      <div className='container-lg center logocontainer' align='center'>
+        <img src={logo} alt="logo" className="logo" />
+      </div>
+
+
+      {/* Main navbar */}
+      <div className="mainNav">
+        <div className='container-lg mainnav' id='home'>
+            <ul className="mainnav__list">
+                <li className="mainNav__listItem"> <a href="#home"> HOME </a></li>
+                <li className="mainNav__listItem"> <a href="#products"> APPARELS </a></li>
+                <li className="mainNav__listItem"> <a href="#footer"> SOLE RANGERS </a> </li>
+                <li className="mainNav__listItem"> <a href="#products">SNEAKERS </a> </li>
+                <li className="mainNav__listItem"> <a href="#location"> DUNKS</a> </li>
+                <li className="mainNav__listItem"> <a href="#instagram"> JORDANS </a></li>
+            </ul>
+        </div>
+      </div>
+    </>
+  ) 
 }
 
 export default Navbar
