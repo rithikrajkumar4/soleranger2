@@ -14,6 +14,7 @@ const CreateProduct = lazy(() => import('./Components/Admin/Create/CreateProduct
 const Loader = lazy(() => import('./Components/Loader/loader'))
 const ProductDetail = lazy(()=>import('./Components/ProductDetails/productDeatail.js'))
 const Construction = lazy(()=>import('./Components/Construction/Construction'))
+const Policies = lazy(()=>import('./Components/Policies/Policies'))
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route path='/admin/create-product' element={<CreateProduct/>}></Route> */}
               <Route path='/product' element={<CreateProduct/>}></Route>
               <Route path='/product/:id' element={<ProductDetail/>}></Route>
+              <Route path='/policy' element={<Policies/>}></Route>
               <Route path='/:random' element={<Construction/>}></Route>
           </Routes>
         </Suspense>
