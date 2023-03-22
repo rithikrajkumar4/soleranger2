@@ -7,9 +7,9 @@ import {
 } from 'react-router-dom' ;
 
 const Home = lazy(() =>import('./Components/HomePage/Home'));
-const Login = lazy(() =>import('./Components/Login/Login'));
-const Register = lazy(() =>import('./Components/Register/Register'));
-const Admin = lazy(() => import('./Components/Admin/Admin'))
+// const Login = lazy(() =>import('./Components/Login/Login'));
+// const Register = lazy(() =>import('./Components/Register/Register'));
+// const Admin = lazy(() => import('./Components/Admin/Admin'))
 const CreateProduct = lazy(() => import('./Components/Admin/Create/CreateProduct'))
 const Loader = lazy(() => import('./Components/Loader/loader'))
 const ProductDetail = lazy(()=>import('./Components/ProductDetails/productDeatail.js'))
@@ -22,10 +22,10 @@ function App() {
         <Suspense fallback={<Loader/>}>
           <Routes>
               <Route path='/' element={<Home/>}></Route>
-              <Route path='/login' element={<Login/>}></Route>
+              {/* <Route path='/login' element={<Login/>}></Route>
               <Route path='/register' element={<Register/>}></Route>
               <Route path='/admin' element={<Admin/>}></Route>
-              <Route path='/admin/create-product' element={<CreateProduct/>}></Route>
+              <Route path='/admin/create-product' element={<CreateProduct/>}></Route> */}
               <Route path='/product' element={<CreateProduct/>}></Route>
               <Route path='/product/:id' element={<ProductDetail/>}></Route>
               <Route path='/:random' element={<Construction/>}></Route>

@@ -25,9 +25,6 @@ const ProductDetail = () => {
   const [qunatity,setQuantity] = useState(1) ;
   // const [size,setSize] = useState([]) ;
 
-  const clickHandler = (e) => {
-    e.preventDefault() ;
-  }
 
   useEffect(() =>{
     async function fetchProduct ()  {
@@ -137,7 +134,7 @@ const ProductDetail = () => {
                 *for purchasing please dm us on instagram
               </div>
               <div className="productDetails__button">
-                 <button className="productDetails__instaButton" onClick={(e) => { e.preventDefault() }}>  Click here to open instagram </button>
+                 <span className="productDetails__instaButton"> <a href="https://www.instagram.com/solerangers/?igshid=YmMyMTA2M2Y="> Click here to open instagram </a> </span>
               </div>
 
               {/* <div className="productDetails__quantity">

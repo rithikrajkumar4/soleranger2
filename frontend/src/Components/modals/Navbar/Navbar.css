@@ -40,11 +40,13 @@
 }
 
 .accountIcon{
+    /* display: none; */
     cursor: pointer;
 }
 
 .nav__userName{
     margin-right: 5px;
+    display: none;
 }
 
 

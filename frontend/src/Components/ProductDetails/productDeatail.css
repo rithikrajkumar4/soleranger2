@@ -129,16 +129,25 @@
     max-width: 90%;
 }
 
-.productDetails__instaButton{
+.productDetails__button{
+    margin-top: 15px;
+}
+
+.productDetails__instaButton a {
+    text-decoration: none;
     padding: 8px;
     border: none;
     outline: none;
     background-color: black;
     color: white;
+    /* text-decoration: none; */
     margin-top: 5px;
+    cursor: pointer;
 }
 
-.productDetails__instaButton:hover{
+
+.productDetails__instaButton a:hover{
+    color: black;
     color: black;
     background-color: white;
     border: 1px solid black;

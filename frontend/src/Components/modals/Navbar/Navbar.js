@@ -17,7 +17,7 @@ function Navbar() {
   const {user} = useSelector(state => state.user) ;
 
 
- 
+  
 
   return (
     <>
@@ -38,7 +38,7 @@ function Navbar() {
               </div>
 
               <div className="nav__cart nav__icons">
-                  <ShoppingCartOutlinedIcon className='nav__shopCart'  sx={{ fontSize: 28 }}/>
+                  <ShoppingCartOutlinedIcon className='nav__shopCart' onClick={()=> navigate('/cart')} sx={{ fontSize: 28 }}/>
               </div>
             </div>
             <div className="nav__toggler">
