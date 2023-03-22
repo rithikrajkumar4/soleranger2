@@ -39,11 +39,11 @@ const navigate = useNavigate();
                         LEGAL
                     </h3>
                     <ul className="footer__links">
-                        <li className="footer__item" onClick={() => navigate('/policy')}>Terms and Conditions</li>
-                        <li className="footer__item" onClick={() => navigate('/policy')}>Sellers Policy</li>
-                        <li className="footer__item" onClick={() => navigate('/policy')}>Privacy Policy</li>
-                        <li className="footer__item" onClick={() => navigate('/policy')}>Shipping Policy</li>
-                        <li className="footer__item" onClick={() => navigate('/policy')}>Return Policy</li>
+                        <li className="footer__item" onClick={() => navigate('/policy')}> <a href="#terms"> Terms and Conditions </a></li>
+                        <li className="footer__item" onClick={() => navigate('/policy')}><a href="#seller"> Sellers Policy</a></li>
+                        <li className="footer__item" onClick={() => navigate('/policy')}> <a href="#privacy">Privacy Policy</a></li>
+                        <li className="footer__item" onClick={() => navigate('/policy')}><a href="#shipping">Shipping Policy</a></li>
+                        <li className="footer__item" onClick={() => navigate('/policy')}><a href="#return">Return Policy</a></li>
                     </ul>
                 </div>
                 <div className="col-md-3 col-12 " align='center'>
