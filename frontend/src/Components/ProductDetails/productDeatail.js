@@ -25,6 +25,10 @@ const ProductDetail = () => {
   const [qunatity,setQuantity] = useState(1) ;
   // const [size,setSize] = useState([]) ;
 
+  const clickHandler = (e) => {
+    e.preventDefault() ;
+  }
+
   useEffect(() =>{
     async function fetchProduct ()  {
       await  axios(`${BASE_URL}api/v1/product/${productId.id}`)
@@ -41,9 +45,9 @@ const ProductDetail = () => {
   return (
     <div className="productDetails">
       <Navbar />
-      <div className="logo__" onClick={() => navigate('/')}>
+      {/* <div className="logo__" onClick={() => navigate('/')}>
         <Logo  className='logo product__logo'/>
-      </div>
+      </div> */}
       
       {/* <MainNav/> */}
 
@@ -114,23 +118,29 @@ const ProductDetail = () => {
             <div className="productDetails__price">
                 ₹ {product.price}
             </div>
-            <form action="" className="productDetails__form">
+            <form action={(e) =>e.preventDefault()} className="productDetails__form">
               <div className="porductDetails__size">
                 <span className="productSize__heading"> size </span>
                 <div className="product__sizes">
                   
                   {/* {console.log(product.stock)} */}
-                  <div className="size__container">
+                  <div className="size__container" align='center'>
                     {product.stock.map((sizeArray) => (
-                      
                         <ColorTab name={sizeArray.key} key={sizeArray._id} />
-                      
                     ) )}
                   </div>
                   {/* {product.stock} */}
                 </div>
               </div>
-              <div className="productDetails__quantity">
+
+              <div className="productDetails__demo">
+                *for purchasing please dm us on instagram
+              </div>
+              <div className="productDetails__button">
+                 <button className="productDetails__instaButton" onClick={(e) => { e.preventDefault() }}>  Click here to open instagram </button>
+              </div>
+
+              {/* <div className="productDetails__quantity">
                 <span className="productQuantity__heading"> quantity </span>
                 <div className="quantity__selector">
                   <div className="quantity__decrease" onClick={()=> setQuantity(qunatity-1)}>-</div>
@@ -143,7 +153,7 @@ const ProductDetail = () => {
               </div>
               <div className="productDetails__buyNow">
                 <button className="buyNow__button"> BUY NOW </button>
-              </div>
+              </div> */}
             </form>
             <div className="productDetails__desc">
               <hr />

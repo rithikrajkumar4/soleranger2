@@ -70,15 +70,16 @@
     transition: all 0.5s;
 }
 
-.mainNav__listItem a{
+.mainNav__listItem{
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 1em;
     padding-right: 1em;
-    
 }
 
-.mainnav__list a{
+
+
+.mainnav__list{
     /* text-transform:uppercase; */
     text-decoration: none !important;
     color: black;
@@ -87,6 +88,24 @@
     font-weight: 600;
 }
 
+.mainNav__listItem a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.mainNav__listItem a:hover {
+    color: white;
+    background-color: brown;
+}
+
+.mainNav__listItem:hover{
+    color: white;
+    background-color: brown;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s all;
+}
 
 
 .mainNav__listItem a:hover{
@@ -96,7 +115,6 @@
     color: white;
     transition: 0.3s all;
 }
-
 
 
 .mainNav{
@@ -111,3 +129,4 @@
 .nav__toggler{
     display: none;
 }
+
