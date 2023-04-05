@@ -11,34 +11,30 @@ import BASE_URL from "../../redux/baseurl";
 import { IKImage } from "imagekitio-react";
 import '../Loader/loader'
 // import Zoom from 'react-img-hover-zoom'
-// import { useDispatch, useSelector } from "react-redux";
-// import { fetchSingleProduct } from "../../redux/slices/productDetail";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProductDetails } from "../../redux/slices/productDetailSlice";
 
 
 const ProductDetail = () => {
-  // const dispatch = useDispatch() ;
+  const dispatch = useDispatch() ;
   const urlEndpoint = "https://ik.imagekit.io/solerangers/";
   const navigate = useNavigate() ;
   const productId = useParams() ;
   const [isLoading,setIsLoading] = useState(true) ;
-  const [product,setProduct] = useState([]) ;
+  const product = useSelector((state)=>state.productDetails.productDetail) ;
   const [qunatity,setQuantity] = useState(1) ;
   // const [size,setSize] = useState([]) ;
 
 
   useEffect(() =>{
-    async function fetchProduct ()  {
-      await  axios(`${BASE_URL}api/v1/product/${productId.id}`)
+    dispatch(fetchProductDetails(productId.id))
       .then((res) => {
-        setProduct(res.data.product) ;
         setIsLoading(false) ;
       })
       .catch((err) => console.log(err)) ;
-    }
 
-    fetchProduct() ;
-  },[productId]);
 
+  },[dispatch]);
   return (
     <div className="productDetails">
       <Navbar />

@@ -19,7 +19,6 @@ function CardTray() {
   const error = useSelector((state) => state.products.error);
   const resultPerPage = useSelector((state)=>state.products.resultPerPage);
 
-  console.log(resultPerPage);
   const setCurrentPageNo =(e)=>{
     setCurrentPage(e)
   }
