@@ -42,10 +42,10 @@ function CardTray() {
       <div className="cardTray container-lg" id="products">
         <div>
           <div className="row" align="center">
-            <h1 className="home__heading"> Products </h1>
-            <hr />
+            <h1 className="text-5xl font-poppins font-bold pt-2 pb-0 pb-10 text-center uppercase md:text-7xl"> Products </h1>
+            {/* <hr /> */}
             {product_list.map((product) => (
-              <div className="col-lg-4 col-md-6 my-4" key={product._id}>
+              <div className="col-lg-4 col-md-6 my-3" key={product._id}>
                 <ViewCard
                   id={product._id}
                   image={product.images}

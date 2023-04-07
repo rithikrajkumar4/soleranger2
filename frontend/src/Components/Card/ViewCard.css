@@ -22,29 +22,29 @@
 }
 
 .card__name{
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     text-transform: uppercase;
     color: rgb(46, 46, 46);
 }
 
 .card__brand{
     color: rgb(37, 39, 26);
-    font-size: 1.4rem;
+    /* font-size: 1.4rem; */
     text-transform: uppercase;
     margin-top: -5px;
-    font-weight: 400;
+    /* font-weight: 400; */
     text-decoration: none;
 }
 
 .card__price{
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     margin-top: -5px;
     color: rgb(15, 14, 14);
 }
 
 .card__sizes{
     color: red;
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
 }
 
 /* .carousel .carousel-indicators li {background-color: red;} */

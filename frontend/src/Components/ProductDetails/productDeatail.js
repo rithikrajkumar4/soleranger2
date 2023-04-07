@@ -109,15 +109,17 @@ const ProductDetail = () => {
 
           </div>
           <div className="col-lg-4 mx-lg-5 productDetails__col">
-            <div className="productDetails__name">
-              <h1>{product.name}</h1>
+            <div className="productDetails__name text-black capitalize ">
+              <h1 className="font-poppins text-3xl font-thin">{product.name}</h1>
             </div>
-            <div className="productDetails__price">
+            <div className="productDetails__price text-2xl">
                 ₹ {product.price}
             </div>
             <form action={(e) =>e.preventDefault()} className="productDetails__form">
               <div className="porductDetails__size">
-                <span className="productSize__heading"> size </span>
+                <span className="productSize__heading text-darkGray font-poppins capitalize text-xl font-bold"> 
+                size 
+                </span>
                 <div className="product__sizes">
                   
                   {/* {console.log(product.stock)} */}
@@ -130,11 +132,11 @@ const ProductDetail = () => {
                 </div>
               </div>
 
-              <div className="productDetails__demo">
+              <div className="productDetails__demo font-poppins ">
                 *for purchasing please dm us on instagram
               </div>
-              <div className="productDetails__button">
-                 <span className="productDetails__instaButton"> <a href="https://www.instagram.com/solerangers/?igshid=YmMyMTA2M2Y="> Click here to open instagram </a> </span>
+              <div className="productDetails__button font-poppins">
+                 <span className="productDetails__instaButton capitalize"> <a href="https://www.instagram.com/solerangers/?igshid=YmMyMTA2M2Y="> Click here to open instagram </a> </span>
               </div>
 
               {/* <div className="productDetails__quantity">
@@ -154,7 +156,7 @@ const ProductDetail = () => {
             </form>
             <div className="productDetails__desc">
               <hr />
-              <p className="product__description">
+              <p className="product__description font-poppins">
               
               {product.description}
               </p>
