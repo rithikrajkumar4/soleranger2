@@ -59,7 +59,7 @@ function Navbar() {
             <ul className="mainnav__list">
                 <li className="mainNav__listItem" onClick={() => navigate('/')}>  HOME </li>
                 <li className="mainNav__listItem disable" onClick={() => navigate('/underWorking')}>  APPARELS </li>
-                <li className="mainNav__listItem disable" onClick={() => navigate('/underWorking')}> SOLE RANGERS </li>
+                <li className="mainNav__listItem disable" onClick={() => navigate('/underWorking')}> SOLE*RANGERS </li>
                 <li className="mainNav__listItem" onClick={() => navigate('/')}> <a href="#products">SNEAKERS </a> </li>
                 <li className="mainNav__listItem disabel" onClick={() => navigate('/underWorking')}>  DUNKS</li>
                 <li className="mainNav__listItem disable" onClick={() => navigate('/underWorking')}>  JORDANS </li>

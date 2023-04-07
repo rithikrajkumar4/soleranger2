@@ -11,13 +11,6 @@
     transform: scale(1.5);
 } */
 
-.productDetails__name{
-    /* font-size: 4rem; */
-    /* text-transform: uppercase; */
-    /* font-weight: 700; */
-    /* color: black; */
-}
-
 .productDetails__price{
     margin-top: -6px;
     /* font-size: 1.2rem; */
