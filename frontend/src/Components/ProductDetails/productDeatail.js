@@ -27,7 +27,7 @@ const ProductDetail = () => {
 
   useEffect(() =>{
     async function fetchProduct ()  {
-      await  axios(`${BASE_URL}api/v1/product/${productId.id}`)
+      await  axios(`${BASE_URL}/product/${productId.id}`)
       .then((res) => {
         setProduct(res.data.product) ;
         setIsLoading(false) ;
