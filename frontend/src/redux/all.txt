@@ -1,4 +1,4 @@
-so here we will use createSlice,saga,middleware for the state management 
+so here we will use createSlice,middlewar thunk for the state management 
 basically a slice is a part of store data
 our project have 4 slices
 1.user->{adduser,deleteuser,changeRole,getalldetailofuser,getallordersoftheuser}
@@ -6,3 +6,4 @@ our project have 4 slices
 3.orders
 4.auth->{loginWithRefreshRetain,registerandredirectwithcookie,userCookiesave,forgotpassword}
 5.cart
+6.ProductDetails

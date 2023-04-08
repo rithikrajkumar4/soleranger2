@@ -3,8 +3,7 @@ import React, {  useEffect, useState } from "react";
 import './productDeatail.css'
 import Footer from "../Footer/Footer";
 import Navbar from "../modals/Navbar/Navbar";
-import Logo from '../Logo/Logo';
-import {useNavigate,useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import axios from "axios";
 import ColorTab from "../modals/ColorTab/ColorTab";
 import BASE_URL from "../../redux/baseurl";
@@ -18,11 +17,11 @@ import '../Loader/loader'
 const ProductDetail = () => {
   // const dispatch = useDispatch() ;
   const urlEndpoint = "https://ik.imagekit.io/solerangers/";
-  const navigate = useNavigate() ;
+  // const navigate = useNavigate() ;
   const productId = useParams() ;
   const [isLoading,setIsLoading] = useState(true) ;
   const [product,setProduct] = useState([]) ;
-  const [qunatity,setQuantity] = useState(1) ;
+  // const [qunatity,setQuantity] = useState(1) ;
   // const [size,setSize] = useState([]) ;
 
 
