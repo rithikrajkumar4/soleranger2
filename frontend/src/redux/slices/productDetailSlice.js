@@ -5,7 +5,7 @@ import BASE_URL from "../baseurl";
 export const fetchProductDetails = createAsyncThunk(
   "product/getProductDetails",
   async (id) => {
-    const res = await axios.get(`${BASE_URL}api/v1/product/${id}`);
+    const res = await axios.get(`${BASE_URL}/product/${id}`);
     return res.data.product;
   }
 );

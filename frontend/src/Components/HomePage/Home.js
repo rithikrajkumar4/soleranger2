@@ -1,6 +1,5 @@
 import React from 'react'
 import Carousel from '../Carousel/Carousel'
-import Logo from '../Logo/Logo';
 import './Home.css' ;
 
 import CardTray from '../CardTray/CardTray';
@@ -8,7 +7,6 @@ import Navbar from '../modals/Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import Map from '../Map/Map';
 import Insta from '../Insta/Insta';
-import MainNav from '../MainNav/MainNav';
 
 
 function Home() {

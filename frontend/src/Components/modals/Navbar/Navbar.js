@@ -1,10 +1,10 @@
 import React from 'react'
-import SearchIcon from '@mui/icons-material/Search';
+// import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import './Navbar.css'
 import {useNavigate} from 'react-router-dom' ;
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import logo from '../../Assets/logo/logo.png'
 import MenuIcon from '@mui/icons-material/Menu';
 import logoName from '../../Assets/logo/logoName.png'
@@ -14,7 +14,7 @@ function Navbar({showMainNav}) {
 
 
   const navigate = useNavigate() ;
-  const {user} = useSelector(state => state.user) ;
+  // const {user} = useSelector(state => state.user) ;
 
 
   
