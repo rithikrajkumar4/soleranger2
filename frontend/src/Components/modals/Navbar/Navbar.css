@@ -13,12 +13,12 @@
 
 }
 
-.nav__rightSide{
+/* .nav__rightSide{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-right: 3rem;
-}
+} */
 
 .nav__search{
     background-color: white;

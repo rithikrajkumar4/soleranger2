@@ -7,10 +7,10 @@ import {useNavigate} from 'react-router-dom' ;
 import { useSelector } from 'react-redux';
 import logo from '../../Assets/logo/logo.png'
 import MenuIcon from '@mui/icons-material/Menu';
+import logoName from '../../Assets/logo/logoName.png'
 
 
-
-function Navbar() {
+function Navbar({showMainNav}) {
 
 
   const navigate = useNavigate() ;
@@ -23,15 +23,17 @@ function Navbar() {
     <>
       {/* Navbar Top */}
       <div className='container-fluid prenav'>
-          <nav className='prenavBar'>
-            <div className="nav__search">
-              <input type="text" placeholder='Search Here' className="nav__searchInput" />
-              <SearchIcon className='nav__searchIcon'/>
+
+          <nav className='prenavBar relative h-11'>
+
+            <div className="logoSection">
+                  <img src={logoName} alt="SoleRangers" className='h-6 mx-auto text-center self-center cursor-pointer' onClick={() =>navigate('/')}/>
             </div>
-            <div className="nav__rightSide">
-              <div className="nav__userName">
+
+            <div className="nav__rightSide flex self-center justify-items-end justify-self-end absolute right-0">
+              {/* <div className="nav__userName">
                 Hii !! { !user ? (<> Guest </>) :( <> log in </> ) }
-              </div>
+              </div> */}
               
               <div className="nav__user nav__icons">
                 <AccountCircleOutlinedIcon sx={{ fontSize: 28 }} onClick={() => navigate('/login')} className='accountIcon'/>
@@ -41,6 +43,8 @@ function Navbar() {
                   <ShoppingCartOutlinedIcon className='nav__shopCart' onClick={()=> navigate('/cart')} sx={{ fontSize: 28 }}/>
               </div>
             </div>
+            
+            
             <div className="nav__toggler">
               <MenuIcon/>
             </div>
@@ -54,18 +58,23 @@ function Navbar() {
 
 
       {/* Main navbar */}
-      <div className="mainNav">
-        <div className='container-lg mainnav' id='home'>
-            <ul className="mainnav__list">
-                <li className="mainNav__listItem" onClick={() => navigate('/')}>  HOME </li>
-                <li className="mainNav__listItem disable" onClick={() => navigate('/underWorking')}>  APPARELS </li>
-                <li className="mainNav__listItem disable" onClick={() => navigate('/underWorking')}> SOLE*RANGERS </li>
-                <li className="mainNav__listItem" onClick={() => navigate('/')}> <a href="#products">SNEAKERS </a> </li>
-                <li className="mainNav__listItem disabel" onClick={() => navigate('/underWorking')}>  DUNKS</li>
-                <li className="mainNav__listItem disable" onClick={() => navigate('/underWorking')}>  JORDANS </li>
-            </ul>
-        </div>
-      </div>
+      {(showMainNav) ? (
+                <div className="mainNav">
+                <div className='container-lg mainnav' id='home'>
+                    <ul className="mainnav__list">
+                        <li className="mainNav__listItem" onClick={() => navigate('/')}>  HOME </li>
+                        <li className="mainNav__listItem disable" onClick={() => navigate('/underWorking')}>  APPARELS </li>
+                        <li className="mainNav__listItem disable" onClick={() => navigate('/underWorking')}> SOLE*RANGERS </li>
+                        <li className="mainNav__listItem" onClick={() => navigate('/')}> <a href="#products">SNEAKERS </a> </li>
+                        <li className="mainNav__listItem disabel" onClick={() => navigate('/underWorking')}>  DUNKS</li>
+                        <li className="mainNav__listItem disable" onClick={() => navigate('/underWorking')}>  JORDANS </li>
+                    </ul>
+                </div>
+              </div>
+      ):(
+        <></>
+      )}
+      
     </>
   ) 
 }

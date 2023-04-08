@@ -15,7 +15,7 @@ function Home() {
   return (
     <div className='homepage'>
       {/* preNav */}
-      <Navbar/>
+      <Navbar  showMainNav={true}/>
       {/* logo */}
         {/* <Logo/> */}
       {/* navbar */}

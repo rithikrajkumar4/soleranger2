@@ -40,8 +40,8 @@ function Register() {
   return (
     <div className='RegisterPage'>
         <Navbar/>
-        <div className="register__container">
-            <h1 className="Register__heading">
+        <div className="register__container font-poppins">
+            <h1 className="Register__heading uppercase">
                 Register
             </h1>
             <div className="register__text"> Please enter the details below </div>
@@ -51,7 +51,7 @@ function Register() {
                 <input type="password" placeholder='Password' className="register__input register__pass" value={password} onChange={(e) =>setPassword(e.target.value)} required/>
                 <button className='register__button' onClick={handleClick}> Register </button>
             </form>
-            <div className="register__bottom">Already have an account ? <span className='register__link' onClick={()=>navigate('/login')}> Login</span> </div>
+            <div className="register__bottom">Already have an account ? <span className='register__link text-black underline cursor-pointer' onClick={()=>navigate('/login')}> Login</span> </div>
         </div>
 
     </div>
