@@ -34,25 +34,28 @@ function Login() {
                 dispatch({
                     type:"login",
                     payload:{
-                        userName : res.data.user.name,
-                        userEmail : res.data.user.email,
-                        userRole : res.data.user.role
+                        user : res.data.user
                     }
                 });
                 if(res.data.user.role === 'admin'){
                  navigate('/admin') ;  
+                } else{
+                    localStorage.setItem('user',JSON.stringify(res.data));
+                    navigate('/') ;
                 }
             }
          })
          .catch((err) =>{
             alert('wrong email or password') ;
          })
+
+         console.log('clicked')
     }
 
 
     return (
     <div className='LoginPage'>
-        <Navbar showMainNav={false}/>
+        <Navbar showMainNav={false} showLogo={true}/>
         <div className="login__container">
             <h1 className="login__heading font-poppins">
                 LOGIN

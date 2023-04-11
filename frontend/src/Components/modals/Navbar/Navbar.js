@@ -1,22 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import './Navbar.css'
 import {useNavigate} from 'react-router-dom' ;
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import logo from '../../Assets/logo/logo.png'
 import MenuIcon from '@mui/icons-material/Menu';
 import logoName from '../../Assets/logo/logoName.png'
+import LogoutIcon from '@mui/icons-material/Logout';
 
-
-function Navbar({showMainNav}) {
+function Navbar({showMainNav,showLogo}) {
 
 
   const navigate = useNavigate() ;
-  // const {user} = useSelector(state => state.user) ;
+
+  // const getUser = (state) => {
+  //   return state.user.name
+  // }
+
+  // const {user} = useSelector(getUser(myState)) ;
 
 
+
+  const [user, setUser] = useState({})
+  
+  const [isUser,setIsUser] = useState(false); 
+  useEffect(()=> {
+    //logic for getting a value from local storage stored under the key 'key'
+    const userDetails = JSON.parse(localStorage.getItem('user')) ;
+    if(userDetails){
+      setUser(userDetails) ;
+      setIsUser(true) ;
+    }  
+  },[])
   
 
   return (
@@ -30,14 +47,26 @@ function Navbar({showMainNav}) {
                   <img src={logoName} alt="SoleRangers" className='h-6 mx-auto text-center self-center cursor-pointer' onClick={() =>navigate('/')}/>
             </div>
 
-            <div className="nav__rightSide flex self-center justify-items-end justify-self-end absolute right-0">
-              {/* <div className="nav__userName">
-                Hii !! { !user ? (<> Guest </>) :( <> log in </> ) }
-              </div> */}
+            <div className="nav__rightSide flex self-center justify-items-end justify-self-end  right-0">
               
-              <div className="nav__user nav__icons">
-                <AccountCircleOutlinedIcon sx={{ fontSize: 28 }} onClick={() => navigate('/login')} className='accountIcon'/>
+            <div className="">
+                Hii !! { isUser ? 
+                          (<span className='text-darkGray cursor-pointer hover:underline hover:text-darkBlack' onClick={() => navigate('/user')}> {user.user.name}</span> ) 
+                          :( <> Guest </> ) 
+                       }
               </div>
+
+              { isUser ? 
+                      <div className="nav__user nav__icons">
+                          <LogoutIcon sx={{ fontSize: 28 }} onClick={() => navigate('/login')} className='accountIcon'/>
+                      </div>
+              : 
+                      <div className="nav__user nav__icons">
+                          <AccountCircleOutlinedIcon sx={{ fontSize: 28 }} onClick={() => navigate('/login')} className='accountIcon'/>
+                      </div>
+              }
+
+              
 
               <div className="nav__cart nav__icons">
                   <ShoppingCartOutlinedIcon className='nav__shopCart' onClick={()=> navigate('/cart')} sx={{ fontSize: 28 }}/>
@@ -52,11 +81,10 @@ function Navbar({showMainNav}) {
       </div>
 
       {/* Logo */}
-      <div className='container-lg center logocontainer' align='center'>
-        <img src={logo} alt="logo" className="logo" onClick={() => navigate('/')}/>
-      </div>
-
-
+      {(showLogo) ?
+        <div className='container-lg center logocontainer' align='center'>
+          <img src={logo} alt="logo" className="logo" onClick={() => navigate('/')}/>
+        </div>:(<></>)}
       {/* Main navbar */}
       {(showMainNav) ? (
                 <div className="mainNav">
