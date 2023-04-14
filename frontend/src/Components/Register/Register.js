@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import './Register.css'
 import Navbar from '../modals/Navbar/Navbar'
 import {useNavigate} from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { authRegister } from '../../redux/slices/authSlice';
 
 function Register() {
-
+    const dispatch = useDispatch();
     const navigate = useNavigate() ;
     const [name,setName] = useState('') ;
     const [email,setEmail] = useState('');
@@ -13,12 +15,12 @@ function Register() {
     const handleClick = async(e) => {
         console.log('in') ;
         e.preventDefault() ;
-        // const postData = {
-        //     name : name ,
-        //     email : email,
-        //     password : password
-        // }
-
+        const postData = {
+            name : name ,
+            email : email,
+            password : password
+        }
+        dispatch(authRegister(postData))
         // const res = await fetch("http://localhost:4000/api/v1/register",{   
         //     method: 'POST',
         //     headers: {
