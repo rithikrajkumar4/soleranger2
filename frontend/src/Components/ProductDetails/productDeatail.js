@@ -32,6 +32,7 @@ const ProductDetail = () => {
 
 
   },[dispatch,productId.id]);
+  
   return (
     <div className="productDetails">
       <Navbar />

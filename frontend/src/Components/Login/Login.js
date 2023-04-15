@@ -5,6 +5,7 @@ import "./Login.css";
 // import axios from 'axios' ;
 import { authLogin } from "../../redux/slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import Cookies from 'js-cookie';
 
 function Login() {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ function Login() {
   });
   return (
     <div className="LoginPage">
-      <Navbar showMainNav={false} />
+      <Navbar showMainNav={false} showLogo={true}/>
       <div className="login__container">
         <h1 className="login__heading font-poppins">LOGIN</h1>
         <div className="login__text font-poppins">
