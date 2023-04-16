@@ -41,7 +41,7 @@ function Register() {
 
   return (
     <div className='RegisterPage'>
-        <Navbar/>
+        <Navbar showLogo={true} showMainNav={false}/>
         <div className="register__container font-poppins">
             <h1 className="Register__heading uppercase">
                 Register
