@@ -7,6 +7,7 @@ import Cookies from 'js-cookie';
 let axiosConfig = {
   headers: {
     "Content-Type": "application/json",
+    // "credentials": 'include',
     // "Acess-Control-Allow-Origin":`${BASE_URL}` 
   },
   // withCredentials: true,
@@ -26,6 +27,7 @@ export const authRegister = createAsyncThunk(
   "auth/register",
   async(data,thunkAPI)=>{
     const res = await axios.post(`${BASE_URL}/register`,data,axiosConfig);
+    console.log(document.cookie)
     return res.data;
   }
 )

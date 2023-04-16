@@ -14,6 +14,6 @@ const sendToken = async (user,statusCode,res) =>{
         success:true,
         user,
         token,
-    })
+    });
 }
 module.exports = sendToken;
