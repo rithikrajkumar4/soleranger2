@@ -15,15 +15,15 @@ function Navbar({showMainNav,showLogo}) {
 
   const navigate = useNavigate() ;
 
-  // const getUser = (state) => {
-  //   return state.user.name
-  // }
+  const getUser = (state) => {
+    return state.user.name
+  }
 
+
+  // const [user, setUser] = useState({})
   // const {user} = useSelector(getUser(myState)) ;
 
-
-
-  const [user, setUser] = useState({})
+ 
   
   const [isUser,setIsUser] = useState(false); 
   useEffect(()=> {
@@ -35,7 +35,7 @@ function Navbar({showMainNav,showLogo}) {
     }  
   },[])
   
-
+  
   return (
     <>
       {/* Navbar Top */}
@@ -51,7 +51,12 @@ function Navbar({showMainNav,showLogo}) {
               
             <div className="">
                 Hii !! { isUser ? 
-                          (<span className='text-darkGray cursor-pointer hover:underline hover:text-darkBlack' onClick={() => navigate('/user')}> {user.user.name}</span> ) 
+                          (
+                          <>
+                            <span> Dashboard  </span>
+                            <span className='text-darkGray cursor-pointer hover:underline hover:text-darkBlack' onClick={() => navigate('/user')}> {user.user.name}</span> 
+                          </>
+                          ) 
                           :( <> Guest </> ) 
                        }
               </div>

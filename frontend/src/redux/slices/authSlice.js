@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import BASE_URL from "../baseurl";
 import Cookies from 'js-cookie';
+import {useNavigate} from 'react-router-dom'
 
 
 let axiosConfig = {
@@ -12,14 +13,20 @@ let axiosConfig = {
   },
   // withCredentials: true,
 };
+
 export const authLogin = createAsyncThunk(
+  
   "auth/login",
   async (data, thunkAPI) => {
     const res = await axios.post(`${BASE_URL}/login`,data,axiosConfig)
     console.log(res.data) ;
-    // if(res.data.success){
-    //   Cookies.set('token',res.data.token) ;
-    // }
+    if(res.data.success){
+      const options = {
+        expires:5,
+        // HttpOnly:true,
+      };
+      Cookies.set('token',res.data.token,options) ;
+    }
     return res.data;
   }
 );

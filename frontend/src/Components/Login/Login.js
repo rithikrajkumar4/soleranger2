@@ -5,7 +5,6 @@ import "./Login.css";
 // import axios from 'axios' ;
 import { authLogin } from "../../redux/slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
-import Cookies from 'js-cookie';
 
 function Login() {
   const navigate = useNavigate();
@@ -15,7 +14,7 @@ function Login() {
     (state) => state.user
   );
   const dispatch = useDispatch();
-
+    
   const handleSubmit = async (e) => {
     e.preventDefault();
     // const loginData = {
