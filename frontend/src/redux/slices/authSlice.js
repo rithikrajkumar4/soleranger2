@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import BASE_URL from "../baseurl";
-import Cookies from 'js-cookie';
-import {useNavigate} from 'react-router-dom'
 
 
 let axiosConfig = {
