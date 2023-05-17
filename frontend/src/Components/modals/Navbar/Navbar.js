@@ -19,6 +19,7 @@ function Navbar({showMainNav,showLogo}) {
   //   return state.user.name
   // }
 
+  // const [user, setUser] = useState({})
   // const {user} = useSelector(getUser(myState)) ;
 
   const [user, setUser] = useState({})
