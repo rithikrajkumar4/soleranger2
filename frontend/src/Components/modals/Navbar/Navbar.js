@@ -15,15 +15,14 @@ function Navbar({showMainNav,showLogo}) {
 
   const navigate = useNavigate() ;
 
-  const getUser = (state) => {
-    return state.user.name
-  }
+  // const getUser = (state) => {
+  //   return state.user.name
+  // }
 
-
-  // const [user, setUser] = useState({})
   // const {user} = useSelector(getUser(myState)) ;
 
- 
+  const [user, setUser] = useState({})
+  
   
   const [isUser,setIsUser] = useState(false); 
   useEffect(()=> {

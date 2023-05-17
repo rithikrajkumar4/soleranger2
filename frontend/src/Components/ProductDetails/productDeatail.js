@@ -29,13 +29,11 @@ const ProductDetail = () => {
         setIsLoading(false) ;
       })
       .catch((err) => console.log(err)) ;
+ },[dispatch,productId.id]);
 
-
-  },[dispatch,productId.id]);
-  
   return (
     <div className="productDetails">
-      <Navbar />
+      <Navbar showLogo={true} showMainNav={false}/>
       {/* <div className="logo__" onClick={() => navigate('/')}>
         <Logo  className='logo product__logo'/>
       </div> */}

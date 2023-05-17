@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from '../../modals/Navbar/Navbar'
 import './CreateProduct.css'
+import axios from 'axios' ;
 
 function CreateProduct() {
   
@@ -11,6 +12,11 @@ function CreateProduct() {
   const [productCategory,setProductCategory] = useState('') ;
 
   
+  const submitHandler = async(e) => {
+    e.preventDefault() ;
+    
+  }
+
   return (
     <div className='createProduct'>
       <Navbar/>
@@ -22,7 +28,7 @@ function CreateProduct() {
           </div>
           <div className="row">
             <div className="col-12">
-              <form className="createProduct__form">
+              <form className="createProduct__form" onSubmit={submitHandler}>
                 <div className="col-8">
                   <div className="createProduct__formInput">
                     <label htmlFor="productName" className='createProduct__labelName'> Enter Name :  </label>
@@ -44,11 +50,11 @@ function CreateProduct() {
                     <label htmlFor="productCategory" className='createProduct__labelName'> Enter Category :  </label>
                     <input type="text" id='productCategory' placeholder='Enter Product category'  className="createProduct__category createProduct__input" value={productCategory} onChange={(e) => {setProductCategory(e.target.value)}}/>
                   </div>
-                  <div className="createProduct__formInput">
+                  {/* <div className="createProduct__formInput">
                     <label htmlFor="productImages" className='createProduct__labelName'> Select Images :  </label>
                     <input type="file" id='productImages' multiple="multiple" className="" />
-                    {/* <input type="file" id='productImages' multiple="multiple" className="createProduct__imagee createProduct__input" /> */}
-                  </div>
+                    <input type="file" id='productImages' multiple="multiple" className="createProduct__imagee createProduct__input" />
+                  </div> */}
                   <button type='submit' className='createProduct__submitButton'> Create </button>
                 </div>
               </form>

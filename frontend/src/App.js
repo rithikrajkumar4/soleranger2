@@ -35,7 +35,6 @@ function App() {
               <Route path='/policy' element={<Policies/>}></Route>
               <Route path='/shipping' element={<Shipping/>}></Route>
               <Route path='/:random' element={<Construction/>}></Route>
-              
           </Routes>
         </Suspense>
       </BrowserRouter>

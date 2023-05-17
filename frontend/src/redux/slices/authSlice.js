@@ -30,6 +30,7 @@ export const authLogin = createAsyncThunk(
     return res.data;
   }
 );
+
 export const authRegister = createAsyncThunk(
   "auth/register",
   async(data,thunkAPI)=>{

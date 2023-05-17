@@ -12,11 +12,11 @@ function Admin() {
 
    return (
         <>
-        {!user ? (
+        {/* {!user ? (
             <>
                Please login first
             </>
-        ) :(
+        ) :( */}
         <div className='admin__page'>
         <Navbar/>
         <div className="container-lg admin__container">
@@ -41,7 +41,7 @@ function Admin() {
             {/* order details */}
         </div>        
         </div>
-        )}
+        {/* )} */}
         </>
   )
 }
