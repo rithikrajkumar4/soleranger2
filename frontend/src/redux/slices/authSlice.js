@@ -9,7 +9,7 @@ let axiosConfig = {
     // "credentials": 'include',
     // "Acess-Control-Allow-Origin":`${BASE_URL}` 
   },
-  // withCredentials: true,
+  withCredentials: true,
 };
 
 export const authLogin = createAsyncThunk(
