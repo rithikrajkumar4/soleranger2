@@ -24,7 +24,7 @@ It have a forgot password which send the recovery email to the user and after au
 ![ss4](https://github.com/rithikrajkumar4/soleranger2/assets/60754009/7adf6dba-3d02-4aad-a90c-0c01b341e1c4)
 <br /><br />
 
-The Admin dashboard , it has the feature for Adding new product and deleting the existing product,this happens using the REST Apis.
+The Admin dashboard , it has the feature for editing,adding new product and deleting the existing product,this happens using the REST Apis.
 ![ss5](https://github.com/rithikrajkumar4/soleranger2/assets/60754009/c07520ad-d9c8-4b0d-a7d0-34d727bd53a9)
 
 Many more features to come.
