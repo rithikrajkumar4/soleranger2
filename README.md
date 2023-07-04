@@ -19,7 +19,7 @@ The product image have a carousel attach to it which automatically change in 3 s
 ![ss1](https://github.com/rithikrajkumar4/soleranger2/assets/60754009/d846ffbb-fbb7-4383-8b50-6b1c7e3c759e)
 <br /><br />
 
-This is the login page or signup in the website. This uses a JWT token for verification and store the token in the cookies for 5 days for smooth user experience.We use redux for the auth management i the website.
+This is the login page or signup in the website. This uses a JWT token for verification and store the token in the cookies for 5 days for smooth user experience.We use redux for the auth management in the website.
 It have a forgot password which send the recovery email to the user and after authorization reset the password.
 ![ss4](https://github.com/rithikrajkumar4/soleranger2/assets/60754009/7adf6dba-3d02-4aad-a90c-0c01b341e1c4)
 <br /><br />
