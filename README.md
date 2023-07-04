@@ -1,7 +1,7 @@
 # SoleRanger
 
 
-Soleramger is a an e-commerce website paticularly design to sell shoes of a brand. The MERN stack is used and for the advance state management in the website we have use Redux.
+Soleranger is a an e-commerce website paticularly design to sell shoes of a brand. The MERN stack is used and for the advance state management in the website we have use Redux.
 The website have various features like product catalog,authorization(admin and a simple user), add to cart,admin dashboard for adding and deleting products.
 This a freelancing project that I get , this is still in the development phase and many more features will be added in it.
 <br />
