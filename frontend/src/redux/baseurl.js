@@ -1,3 +1,3 @@
-const BASE_URL = "https://soleranger.onrender.com"
+const BASE_URL = "https://soleranger.onrender.com/"
 
 export default BASE_URL
