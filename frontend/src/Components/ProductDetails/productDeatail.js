@@ -10,6 +10,7 @@ import '../Loader/loader'
 // import Zoom from 'react-img-hover-zoom'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductDetails } from "../../redux/slices/productDetailSlice";
+import e from "express";
 
 
 const ProductDetail = () => {
@@ -19,8 +20,8 @@ const ProductDetail = () => {
   const productId = useParams() ;
   const [isLoading,setIsLoading] = useState(true) ;
   const product = useSelector((state)=>state.productDetails.productDetail) ;
-  // const [qunatity,setQuantity] = useState(1) ;
-  // const [size,setSize] = useState([]) ;
+  const [qunatity,setQuantity] = useState(1) ;
+  const [size,setSize] = useState([]) ;
 
 
   useEffect(() =>{
@@ -30,6 +31,18 @@ const ProductDetail = () => {
       })
       .catch((err) => console.log(err)) ;
  },[dispatch,productId.id]);
+
+  // const buyButtonHandler = (e) =>{
+  //   e.preventDefault() ;
+  //   console.log('buy button clicked')
+  // }
+
+  // const cartButtonHandler = (e) => {
+  //   e.preventDefault() ;
+  //   console.log('Cliked on cart') ;
+  // }
+
+
 
   return (
     <div className="productDetails">
@@ -122,14 +135,14 @@ const ProductDetail = () => {
                 </div>
               </div>
 
-              <div className="productDetails__demo">
+              {/* <div className="productDetails__demo">
                 *for purchasing please dm us on instagram
               </div>
               <div className="productDetails__button">
                  <span className="productDetails__instaButton"> <a href="https://www.instagram.com/solerangers/?igshid=YmMyMTA2M2Y="> Click here to open instagram </a> </span>
-              </div>
+              </div> */}
 
-              {/* <div className="productDetails__quantity">
+              <div className="productDetails__quantity">
                 <span className="productQuantity__heading"> quantity </span>
                 <div className="quantity__selector">
                   <div className="quantity__decrease" onClick={()=> setQuantity(qunatity-1)}>-</div>
@@ -138,11 +151,11 @@ const ProductDetail = () => {
                 </div>
               </div>
               <div className="productDetails__cart">
-                <button className="cart__button"> Add to cart </button>
+                <button className="cart__button" onClick={cartButtonHandler}> Add to cart </button>
               </div>
               <div className="productDetails__buyNow">
-                <button className="buyNow__button"> BUY NOW </button>
-              </div> */}
+                <button className="buyNow__button" onClick={buyButtonHandler}> BUY NOW </button>
+              </div>
             </form>
             <div className="productDetails__desc">
               <hr />

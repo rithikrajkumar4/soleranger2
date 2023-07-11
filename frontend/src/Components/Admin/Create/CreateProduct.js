@@ -14,7 +14,9 @@ function CreateProduct() {
   
   const submitHandler = async(e) => {
     e.preventDefault() ;
-    
+    const productData = {
+      
+    }
   }
 
   return (
