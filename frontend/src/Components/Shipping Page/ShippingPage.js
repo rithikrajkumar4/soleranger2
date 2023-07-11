@@ -42,8 +42,8 @@ function ShippingPage() {
     {isLoading ?(
         <Loader/>
     ) : (
-        <div className="shipping__container flex flex-wrap pt-28 justify-center gap-36 mb-64">
-        <form className="shipping__form font-poppins flex flex-col text-xl">
+        <div className="shipping__container flex flex-col xl:flex-row flex-wrap pt-28 justify-center gap-36 xl:gap-0 mb-64 mx-4">
+        <form className="shipping__form font-poppins flex flex-col text-xl mx-auto">
             <h1 className='font-poppins font-extrabold uppercase'> Shipping Address </h1>
             <div className="name__section pt-8">
                 <input  type="text" 
@@ -104,14 +104,14 @@ function ShippingPage() {
             <button type='submit' className='mt-5 self-center rounded-md bg-black w-1/2 p-2 text-white '> Continue</button>
 
         </form>
-        <div className="shipping__card flex flex-col  px-4 font-poppins bg-gray-100 w-1/3 md:order-2 rounded-xl">
+        <div className="shipping__card flex flex-col mx-auto px-4 font-poppins bg-gray-100 xl:w-1/3 md:order-2 rounded-xl">
                 <h1 className='uppercase pt-4 pb-2 text-3xl border-b-2' >  Order</h1>
                 <div className=" pt-4 pb-2 border-b-2"> 
                         <div className="flex self-center">
                                 <IKImage
                                         urlEndpoint={urlEndpoint}
                                         path={`solerangers/${product.images}/1.png`}
-                                        className='md:w-52'
+                                        className='md:w-52 w-24'
                                 />
                                 <div className="flex pt-10 pl-6 flex-col">
                                         <div className="product__name text-2xl font-bold"> {product.name} </div>
