@@ -10,6 +10,7 @@ import '../Loader/loader'
 // import Zoom from 'react-img-hover-zoom'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductDetails } from "../../redux/slices/productDetailSlice";
+import { addItem } from "../../redux/slices/cartSlice";
 
 
 const ProductDetail = () => {
@@ -19,8 +20,22 @@ const ProductDetail = () => {
   const productId = useParams() ;
   const [isLoading,setIsLoading] = useState(true) ;
   const product = useSelector((state)=>state.productDetails.productDetail) ;
-  // const [qunatity,setQuantity] = useState(1) ;
+  const [qunatity,setQuantity] = useState(1) ;
   // const [size,setSize] = useState([]) ;
+  const cartItems = useSelector(state => state.cart.value);
+
+
+  const cartItem = {
+    name : '',
+    quantity : 0 ,
+  }
+
+  const addButtonClickHandler  = (e) =>{
+    e.preventDefault();
+    console.log('clicked');
+    dispatch(addItem(cartItem)) ;
+    console.log(cartItems) ;
+  }
 
 
   useEffect(() =>{
@@ -129,7 +144,7 @@ const ProductDetail = () => {
                  <span className="productDetails__instaButton"> <a href="https://www.instagram.com/solerangers/?igshid=YmMyMTA2M2Y="> Click here to open instagram </a> </span>
               </div>
 
-              {/* <div className="productDetails__quantity">
+              <div className="productDetails__quantity">
                 <span className="productQuantity__heading"> quantity </span>
                 <div className="quantity__selector">
                   <div className="quantity__decrease" onClick={()=> setQuantity(qunatity-1)}>-</div>
@@ -138,11 +153,11 @@ const ProductDetail = () => {
                 </div>
               </div>
               <div className="productDetails__cart">
-                <button className="cart__button"> Add to cart </button>
+                <button className="cart__button" onClick={(e)=>{addButtonClickHandler(e)}}> Add to cart </button>
               </div>
               <div className="productDetails__buyNow">
                 <button className="buyNow__button"> BUY NOW </button>
-              </div> */}
+              </div>
             </form>
             <div className="productDetails__desc">
               <hr />

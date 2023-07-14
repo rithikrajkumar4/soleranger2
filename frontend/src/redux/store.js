@@ -1,4 +1,4 @@
-import {configureStore} from '@reduxjs/toolkit';
+import {configureStore, createReducer} from '@reduxjs/toolkit';
 // import { loginReducer } from '../reducer';
 import productReducer from './slices/productSlice';
 import productDetailReducer from './slices/productDetailSlice';
@@ -9,7 +9,9 @@ const store = configureStore({
         products:productReducer,
         productDetails:productDetailReducer,
         user : authReducer,
+        cart : createReducer,
     },
+    
 });
 
 export default store;
