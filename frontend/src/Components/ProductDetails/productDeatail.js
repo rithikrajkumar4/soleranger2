@@ -3,47 +3,55 @@ import React, {  useEffect, useState } from "react";
 import './productDeatail.css'
 import Footer from "../Footer/Footer";
 import Navbar from "../modals/Navbar/Navbar";
-import Logo from '../Logo/Logo';
-import {useNavigate,useParams} from 'react-router-dom'
-import axios from "axios";
+import {useParams} from 'react-router-dom'
 import ColorTab from "../modals/ColorTab/ColorTab";
-import BASE_URL from "../../redux/baseurl";
 import { IKImage } from "imagekitio-react";
 import '../Loader/loader'
 // import Zoom from 'react-img-hover-zoom'
-// import { useDispatch, useSelector } from "react-redux";
-// import { fetchSingleProduct } from "../../redux/slices/productDetail";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProductDetails } from "../../redux/slices/productDetailSlice";
+import { addItem } from "../../redux/slices/cartSlice";
 
 
 const ProductDetail = () => {
-  // const dispatch = useDispatch() ;
+  const dispatch = useDispatch() ;
   const urlEndpoint = "https://ik.imagekit.io/solerangers/";
-  const navigate = useNavigate() ;
+  // const navigate = useNavigate() ;
   const productId = useParams() ;
   const [isLoading,setIsLoading] = useState(true) ;
-  const [product,setProduct] = useState([]) ;
+  const product = useSelector((state)=>state.productDetails.productDetail) ;
   const [qunatity,setQuantity] = useState(1) ;
   // const [size,setSize] = useState([]) ;
+  const cartItems = useSelector(state => state.cart.value);
+
+
+  const cartItem = {
+    name : '',
+    quantity : 0 ,
+  }
+
+  const addButtonClickHandler  = (e) =>{
+    e.preventDefault();
+    console.log('clicked');
+    dispatch(addItem(cartItem)) ;
+    console.log(cartItems) ;
+  }
+
 
   useEffect(() =>{
-    async function fetchProduct ()  {
-      await  axios(`${BASE_URL}api/v1/product/${productId.id}`)
+    dispatch(fetchProductDetails(productId.id))
       .then((res) => {
-        setProduct(res.data.product) ;
         setIsLoading(false) ;
       })
       .catch((err) => console.log(err)) ;
-    }
-
-    fetchProduct() ;
-  },[productId]);
+ },[dispatch,productId.id]);
 
   return (
     <div className="productDetails">
-      <Navbar />
-      <div className="logo__" onClick={() => navigate('/')}>
+      <Navbar showLogo={true} showMainNav={false}/>
+      {/* <div className="logo__" onClick={() => navigate('/')}>
         <Logo  className='logo product__logo'/>
-      </div>
+      </div> */}
       
       {/* <MainNav/> */}
 
@@ -114,22 +122,28 @@ const ProductDetail = () => {
             <div className="productDetails__price">
                 ₹ {product.price}
             </div>
-            <form action="" className="productDetails__form">
+            <form action={(e) =>e.preventDefault()} className="productDetails__form">
               <div className="porductDetails__size">
                 <span className="productSize__heading"> size </span>
                 <div className="product__sizes">
                   
                   {/* {console.log(product.stock)} */}
-                  <div className="size__container">
+                  <div className="size__container" align='center'>
                     {product.stock.map((sizeArray) => (
-                      
                         <ColorTab name={sizeArray.key} key={sizeArray._id} />
-                      
                     ) )}
                   </div>
                   {/* {product.stock} */}
                 </div>
               </div>
+
+              <div className="productDetails__demo">
+                *for purchasing please dm us on instagram
+              </div>
+              <div className="productDetails__button">
+                 <span className="productDetails__instaButton"> <a href="https://www.instagram.com/solerangers/?igshid=YmMyMTA2M2Y="> Click here to open instagram </a> </span>
+              </div>
+
               <div className="productDetails__quantity">
                 <span className="productQuantity__heading"> quantity </span>
                 <div className="quantity__selector">
@@ -139,7 +153,7 @@ const ProductDetail = () => {
                 </div>
               </div>
               <div className="productDetails__cart">
-                <button className="cart__button"> Add to cart </button>
+                <button className="cart__button" onClick={(e)=>{addButtonClickHandler(e)}}> Add to cart </button>
               </div>
               <div className="productDetails__buyNow">
                 <button className="buyNow__button"> BUY NOW </button>

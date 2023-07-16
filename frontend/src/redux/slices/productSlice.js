@@ -4,7 +4,7 @@ import BASE_URL from '../baseurl'
 export const fetchProducts = createAsyncThunk(
   'product/getProducts',
   async (resultPerPage) => {
-    const req = await axios.get(`${BASE_URL}api/v1/products?page=${resultPerPage}`);
+    const req = await axios.get(`${BASE_URL}/products?page=${resultPerPage}`);
     return req.data;
   }
 );

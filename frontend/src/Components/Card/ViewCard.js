@@ -16,9 +16,9 @@ function ViewCard({ id, image, product_name, brand_name, price, sizes }) {
         className='card__image'
         loading="lazy"
       />
-      <div className="card__name">{product_name}</div>
-      <div className="card__brand">{brand_name}</div>
-      <div className="card__price">₹ {price}</div>
+      <div className="card__name font-poppins text-lg font-extrabold">{product_name}</div>
+      <div className="card__brand font-poppins text-lg font-bold">{brand_name}</div>
+      <div className="card__price text-base">₹ {price}</div>
       <div className="card__sizes">{sizes}</div>
     </Link>
   );
