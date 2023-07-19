@@ -3,6 +3,7 @@ import Navbar from '../modals/Navbar/Navbar'
 import './Admin.css'
 import Product from './Product/Product'
 import { useSelector } from 'react-redux'
+import SideNav from './SideNav/SideNav'
 
 function Admin() {
 
@@ -19,6 +20,15 @@ function Admin() {
         ) :( */}
         <div className='admin__page'>
         <Navbar/>
+        <div className="flex">
+            <div className="">
+                <SideNav/>
+            </div>
+            <div className="w-screen bg-gray-100 pt-20 ">
+                <Product/>
+            </div>
+        </div>
+        
         <div className="container-lg admin__container">
             {/* <Dashboard/> */}
             {/* dashboard */}
@@ -36,7 +46,7 @@ function Admin() {
             {/* crud */}
 
 
-        <Product/>
+        {/* <Product/> */}
         {/* orders */}
             {/* order details */}
         </div>        

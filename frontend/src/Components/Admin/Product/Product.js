@@ -45,7 +45,7 @@ function Product() {
     <div>
         <div className="row">
             <div className="col-12">
-                <h1>Products</h1>
+                <h1 className='mx-4'>Products</h1>
                 <hr />
             </div>
         </div>
@@ -96,7 +96,7 @@ function Product() {
             </div>
             <div className="row">
                 <div className="col-12">
-                    <button className="create__product" onClick={() => navigate('create-product')}> Create </button>
+                    <button className="create__product px-4 mx-3    " onClick={() => navigate('create-product')}> Create </button>
                 </div>
             </div>
 

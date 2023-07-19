@@ -53,7 +53,6 @@ function Navbar({showMainNav,showLogo}) {
                 Hii !! { isUser ? 
                           (
                           <>
-                            <span> Dashboard  </span>
                             <span className='text-darkGray cursor-pointer hover:underline hover:text-darkBlack' onClick={() => navigate('/user')}> {user.user.name}</span> 
                           </>
                           ) 
@@ -62,11 +61,11 @@ function Navbar({showMainNav,showLogo}) {
               </div>
 
               { isUser ? 
-                      <div className="nav__user nav__icons">
+                      <div className="nav__user nav__icons pl-2">
                           <LogoutIcon sx={{ fontSize: 28 }} onClick={() => navigate('/login')} className='accountIcon'/>
                       </div>
               : 
-                      <div className="nav__user nav__icons">
+                      <div className="nav__user nav__icons pl-2">
                           <AccountCircleOutlinedIcon sx={{ fontSize: 28 }} onClick={() => navigate('/login')} className='accountIcon'/>
                       </div>
               }
