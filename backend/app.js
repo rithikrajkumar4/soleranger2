@@ -5,7 +5,7 @@ const errorMiddleWare = require("./middleware/error");
 const bodyParser = require('body-parser') ;
 const cors = require('cors') ;
 
-app.use(cors({ credentials : true })) ;
+app.use(cors({ credentials : true,origin:"http://localhost:3000" })) ;
 app.use(express.json())
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended : true})) ;
