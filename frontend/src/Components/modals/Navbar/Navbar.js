@@ -26,9 +26,10 @@ function Navbar({showMainNav,showLogo}) {
   
   
   const [isUser,setIsUser] = useState(false); 
+  const userDetails = useSelector((state)=>state.user.user) ;
+    // console.log(userDetails);
   useEffect(()=> {
-    //logic for getting a value from local storage stored under the key 'key'
-    const userDetails = JSON.parse(localStorage.getItem('user')) ;
+    
     if(userDetails){
       setUser(userDetails) ;
       setIsUser(true) ;
@@ -50,7 +51,7 @@ function Navbar({showMainNav,showLogo}) {
             <div className="nav__rightSide flex self-center justify-items-end justify-self-end  right-0">
               
             <div className="">
-                Hii !! { isUser ? 
+                Hi !! { isUser ? 
                           (
                           <>
                             <span className='text-darkGray cursor-pointer hover:underline hover:text-darkBlack' onClick={() => navigate('/user')}> {user.user.name}</span> 
