@@ -4,11 +4,14 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import './Navbar.css'
 import {useNavigate} from 'react-router-dom' ;
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import logo from '../../Assets/logo/logo.png'
 import MenuIcon from '@mui/icons-material/Menu';
 import logoName from '../../Assets/logo/logoName.png'
 import LogoutIcon from '@mui/icons-material/Logout';
+import { authLogout } from '../../../redux/slices/authSlice';
+
+
 
 function Navbar({showMainNav,showLogo}) {
 
@@ -27,6 +30,7 @@ function Navbar({showMainNav,showLogo}) {
   
   const [isUser,setIsUser] = useState(false); 
   const userDetails = useSelector((state)=>state.user.user) ;
+  const dispatch = useDispatch();
     // console.log(userDetails);
   useEffect(()=> {
     
@@ -34,9 +38,8 @@ function Navbar({showMainNav,showLogo}) {
       setUser(userDetails) ;
       setIsUser(true) ;
     }  
-  },[])
-  
-  
+  },[]);
+ 
   return (
     <>
       {/* Navbar Top */}
@@ -63,7 +66,7 @@ function Navbar({showMainNav,showLogo}) {
 
               { isUser ? 
                       <div className="nav__user nav__icons pl-2">
-                          <LogoutIcon sx={{ fontSize: 28 }} onClick={() => navigate('/login')} className='accountIcon'/>
+                          <LogoutIcon sx={{ fontSize: 28 }} onClick={()=>dispatch(authLogout())} className='accountIcon'/>
                       </div>
               : 
                       <div className="nav__user nav__icons pl-2">

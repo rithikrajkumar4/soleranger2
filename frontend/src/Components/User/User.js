@@ -18,7 +18,7 @@ function User() {
       setUser(userDetails) ;
       setIsUser(true) ;
     }  
-  },[])
+  },[]);
 
   return (
     <>
