@@ -1,29 +1,28 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import BASE_URL from "../baseurl";
-import  Cookies from 'js-cookie';
+import BASE_URL from "../../index";
+import Cookies from "js-cookie";
 
 let axiosConfig = {
   headers: {
     "Content-Type": "application/json",
     // "credentials": 'include',
-    // "Acess-Control-Allow-Origin":`${BASE_URL}` 
+    // "Acess-Control-Allow-Origin":`${BASE_URL}`
   },
   withCredentials: true,
 };
 
 export const authLogin = createAsyncThunk(
-  
   "auth/login",
   async (data, thunkAPI) => {
-    const res = await axios.post(`${BASE_URL}/login`,data,axiosConfig)
-    console.log(res.data) ;
-    if(res.data.success){
+    const res = await axios.post(`${BASE_URL}/login`, data, axiosConfig);
+    console.log(res.data);
+    if (res.data.success) {
       const options = {
-        expires:5,
+        expires: 5,
         // HttpOnly:true,
       };
-      Cookies.set('token',res.data.token,options) ;
+      Cookies.set("token", res.data.token, options);
     }
     return res.data;
   }
@@ -31,12 +30,12 @@ export const authLogin = createAsyncThunk(
 
 export const authRegister = createAsyncThunk(
   "auth/register",
-  async(data,thunkAPI)=>{
-    const res = await axios.post(`${BASE_URL}/register`,data,axiosConfig);
-    console.log(document.cookie)
+  async (data, thunkAPI) => {
+    const res = await axios.post(`${BASE_URL}/register`, data, axiosConfig);
+    console.log(document.cookie);
     return res.data;
   }
-)
+);
 
 const authSlice = createSlice({
   name: "auth",

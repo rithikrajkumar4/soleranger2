@@ -1,8 +1,9 @@
-import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import BASE_URL from '../baseurl'
+import BASE_URL from "../../index";
+
 export const fetchProducts = createAsyncThunk(
-  'product/getProducts',
+  "product/getProducts",
   async (resultPerPage) => {
     const req = await axios.get(`${BASE_URL}/products?page=${resultPerPage}`);
     return req.data;
@@ -10,29 +11,29 @@ export const fetchProducts = createAsyncThunk(
 );
 
 const productSlice = createSlice({
-  name: 'products',
+  name: "products",
   initialState: {
     products: [],
-    status: 'idle',
+    status: "idle",
     error: null,
-    resultPerPage:0
+    resultPerPage: 0,
   },
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
-        state.status = 'loading';
+        state.status = "loading";
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
-        state.status = 'succeeded';
+        state.status = "succeeded";
         state.products = action.payload;
-        state.resultPerPage = action.payload.resultPerPage
+        state.resultPerPage = action.payload.resultPerPage;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
-        state.status = 'failed';
+        state.status = "failed";
         state.error = action.error.message;
       });
-  }
+  },
 });
 
 export default productSlice.reducer;
