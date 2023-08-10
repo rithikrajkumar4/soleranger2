@@ -1,13 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import BASE_URL from "../../index";
+import server from "../../index";
 import Cookies from "js-cookie";
 
 let axiosConfig = {
   headers: {
     "Content-Type": "application/json",
     // "credentials": 'include',
-    // "Acess-Control-Allow-Origin":`${BASE_URL}`
+    // "Acess-Control-Allow-Origin":`${server}`
   },
   withCredentials: true,
 };
@@ -15,7 +15,7 @@ let axiosConfig = {
 export const authLogin = createAsyncThunk(
   "auth/login",
   async (data, thunkAPI) => {
-    const res = await axios.post(`${BASE_URL}/login`, data, axiosConfig);
+    const res = await axios.post(`${server}/login`, data, axiosConfig);
     console.log(res.data);
     if (res.data.success) {
       const options = {
@@ -31,7 +31,7 @@ export const authLogin = createAsyncThunk(
 export const authRegister = createAsyncThunk(
   "auth/register",
   async (data, thunkAPI) => {
-    const res = await axios.post(`${BASE_URL}/register`, data, axiosConfig);
+    const res = await axios.post(`${server}/register`, data, axiosConfig);
     console.log(document.cookie);
     return res.data;
   }
