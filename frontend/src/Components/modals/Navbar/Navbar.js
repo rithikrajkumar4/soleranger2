@@ -10,6 +10,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import logoName from "../../Assets/logo/logoName.png";
 import LogoutIcon from "@mui/icons-material/Logout";
 
+
 function Navbar({ showMainNav, showLogo }) {
   const navigate = useNavigate();
 
@@ -80,6 +81,7 @@ function Navbar({ showMainNav, showLogo }) {
                   onClick={() => navigate("/login")}
                   className="accountIcon"
                 />
+
               </div>
             )}
 

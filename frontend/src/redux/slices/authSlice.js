@@ -3,11 +3,13 @@ import axios from "axios";
 import server from "../../index";
 import Cookies from "js-cookie";
 
+
 let axiosConfig = {
   headers: {
     "Content-Type": "application/json",
     // "credentials": 'include',
     // "Acess-Control-Allow-Origin":`${server}`
+
   },
   withCredentials: true,
 };
@@ -45,16 +47,22 @@ const authSlice = createSlice({
     status: "idle",
     error: null,
   },
-  reducers: {
-    logout(state) {
-      state.user = null;
-      state.isAuthenticated = null;
-      state.status = "idle";
-      state.error = null;
-    },
-  },
   extraReducers: (builer) => {
     builer
+      .addCase(authLogout.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(authLogout.fulfilled, (state) => {
+        state.status = "succeeded";
+        state.user = null;
+        state.isAuthenticated = null;
+        state.status = "idle";
+        state.error = null;
+      })
+      .addCase(authLogout.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
       .addCase(authLogin.pending, (state) => {
         state.status = "loading";
         state.isAuthenticated = false;
