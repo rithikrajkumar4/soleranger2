@@ -1,11 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import BASE_URL from "../../index";
+import server from "../../index";
+
 
 export const fetchProductDetails = createAsyncThunk(
   "product/getProductDetails",
   async (id) => {
-    const res = await axios.get(`${BASE_URL}/product/${id}`);
+    const res = await axios.get(`${server}/product/${id}`);
     return res.data.product;
   }
 );

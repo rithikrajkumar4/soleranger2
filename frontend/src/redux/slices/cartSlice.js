@@ -1,4 +1,5 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+
 
 const cartSlice = createSlice({
   name: "cart",
@@ -9,7 +10,8 @@ const cartSlice = createSlice({
     },
     removeItem: (state, action) => {
       const index = state.findIndex((item) => item.id === action.payload);
-      if (index != -1) {
+      if (index !== -1) {
+
         state.splice(index, 1);
       }
     },
