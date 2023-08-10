@@ -20,5 +20,5 @@ root.render(
   </React.StrictMode>
 );
 
-const server = "http://localhost:4000/api/v1";
+const server = "https://soleranger.onrender.com/api/v1";
 export default server;

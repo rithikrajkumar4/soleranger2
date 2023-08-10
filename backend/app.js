@@ -5,7 +5,7 @@ const errorMiddleWare = require("./middleware/error");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const server = "http://localhost:3000";
+const server = "https://soleranger2.vercel.app";
 
 app.use(cors({ credentials: true, origin: server }));
 app.use(express.json());
