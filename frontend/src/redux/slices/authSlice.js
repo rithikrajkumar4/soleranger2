@@ -16,7 +16,6 @@ export const authLogin = createAsyncThunk(
   "auth/login",
   async (data, thunkAPI) => {
     const res = await axios.post(`${server}/login`, data, axiosConfig);
-    console.log(res.data);
     if (res.data.success) {
       const options = {
         expires: 5,
@@ -44,14 +43,6 @@ const authSlice = createSlice({
     isAuthenticated: false,
     status: "idle",
     error: null,
-  },
-  reducers: {
-    logout(state) {
-      state.user = null;
-      state.isAuthenticated = null;
-      state.status = "idle";
-      state.error = null;
-    },
   },
   extraReducers: (builer) => {
     builer

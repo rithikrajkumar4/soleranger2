@@ -9,6 +9,7 @@ import logo from "../../Assets/logo/logo.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import logoName from "../../Assets/logo/logoName.png";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { useSelector } from "react-redux";
 
 function Navbar({ showMainNav, showLogo }) {
   const navigate = useNavigate();
@@ -20,17 +21,13 @@ function Navbar({ showMainNav, showLogo }) {
   // const [user, setUser] = useState({})
   // const {user} = useSelector(getUser(myState)) ;
 
-  const [user, setUser] = useState({});
-
+  const { user } = useSelector((state) => state.user);
   const [isUser, setIsUser] = useState(false);
   useEffect(() => {
-    //logic for getting a value from local storage stored under the key 'key'
-    const userDetails = JSON.parse(localStorage.getItem("user"));
-    if (userDetails) {
-      setUser(userDetails);
+    if (user !== null) {
       setIsUser(true);
     }
-  }, []);
+  }, [user]);
 
   return (
     <>
@@ -51,7 +48,6 @@ function Navbar({ showMainNav, showLogo }) {
               Hii !!{" "}
               {isUser ? (
                 <>
-                  <span> Dashboard </span>
                   <span
                     className="text-darkGray cursor-pointer hover:underline hover:text-darkBlack"
                     onClick={() => navigate("/user")}
