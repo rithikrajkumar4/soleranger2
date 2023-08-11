@@ -26,8 +26,11 @@ function Home() {
       {/* midwest Image */}
       {/* youtube/insta */}
       {/* map location */}
-      <Map/>
-      <Insta/>
+      <div className="xl:flex justify-center  border-t-2 mx-auto w-screen">
+          <div className=""> <Map/> </div>  
+          <div className=""> <Insta/> </div> 
+      </div>
+      
       {/* footer */}
       <Footer/>
     </div>

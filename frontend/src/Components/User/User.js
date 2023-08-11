@@ -2,20 +2,23 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../modals/Navbar/Navbar'
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import Loader from "../../Components/Loader/loader";
+import { useSelector } from 'react-redux';
 
 function User() {
 
   const [user, setUser] = useState({})
   
   const [isUser,setIsUser] = useState(false); 
+  const userDetails = useSelector((state)=>state.user.user) ;
+  
+
   useEffect(()=> {
     //logic for getting a value from local storage stored under the key 'key'
-    const userDetails = JSON.parse(localStorage.getItem('user')) ;
     if(userDetails){
       setUser(userDetails) ;
       setIsUser(true) ;
     }  
-  },[])
+  },[]);
 
   return (
     <>

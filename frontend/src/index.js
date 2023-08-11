@@ -22,3 +22,4 @@ root.render(
 
 const server = "https://soleranger.onrender.com/api/v1";
 export default server;
+

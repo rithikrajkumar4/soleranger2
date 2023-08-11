@@ -15,6 +15,7 @@ function Admin() {
         <div className="admin__page">
           <Navbar />
           <div className="container-lg admin__container">
+
             {/* <Dashboard/> */}
             {/* dashboard */}
             {/* no. of products */}
@@ -31,6 +32,9 @@ function Admin() {
             {/* crud */}
             <Product />
             {/* orders */}
+
+        {/* <Product/> */}
+        {/* orders */}
             {/* order details */}
           </div>
         </div>

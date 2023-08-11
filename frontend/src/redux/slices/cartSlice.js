@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const cartSlice = createSlice({
   name: "cart",
   initialState: [],
@@ -10,6 +11,7 @@ const cartSlice = createSlice({
     removeItem: (state, action) => {
       const index = state.findIndex((item) => item.id === action.payload);
       if (index !== -1) {
+
         state.splice(index, 1);
       }
     },
