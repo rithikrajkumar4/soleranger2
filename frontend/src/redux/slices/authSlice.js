@@ -3,13 +3,11 @@ import axios from "axios";
 import server from "../../index";
 import Cookies from "js-cookie";
 
-
 let axiosConfig = {
   headers: {
     "Content-Type": "application/json",
     // "credentials": 'include',
     // "Acess-Control-Allow-Origin":`${server}`
-
   },
   withCredentials: true,
 };
@@ -18,7 +16,6 @@ export const authLogin = createAsyncThunk(
   "auth/login",
   async (data, thunkAPI) => {
     const res = await axios.post(`${server}/login`, data, axiosConfig);
-    console.log(res.data);
     if (res.data.success) {
       const options = {
         expires: 5,
@@ -49,20 +46,6 @@ const authSlice = createSlice({
   },
   extraReducers: (builer) => {
     builer
-      .addCase(authLogout.pending, (state) => {
-        state.status = "loading";
-      })
-      .addCase(authLogout.fulfilled, (state) => {
-        state.status = "succeeded";
-        state.user = null;
-        state.isAuthenticated = null;
-        state.status = "idle";
-        state.error = null;
-      })
-      .addCase(authLogout.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.error.message;
-      })
       .addCase(authLogin.pending, (state) => {
         state.status = "loading";
         state.isAuthenticated = false;
