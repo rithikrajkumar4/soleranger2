@@ -10,11 +10,9 @@ function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState();
   const [password, setPass] = useState();
-  const { error, isAuthenticated } = useSelector(
-    (state) => state.user
-  );
+  const { error, isAuthenticated } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-    
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     // const loginData = {
@@ -31,17 +29,17 @@ function Login() {
 
     dispatch(authLogin({ email, password }));
 
-    console.log(error);
+    if (error) console.log(error);
   };
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/');
+      navigate("/");
     }
   });
   return (
     <div className="LoginPage">
-      <Navbar showMainNav={false} showLogo={true}/>
+      <Navbar showMainNav={false} showLogo={true} />
       <div className="login__container">
         <h1 className="login__heading font-poppins">LOGIN</h1>
         <div className="login__text font-poppins">
